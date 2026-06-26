@@ -10,6 +10,124 @@
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400;1,500&family=DM+Sans:wght@300;400;500&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet" />
 <link rel="stylesheet" href="css/style.css" />
 <script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
+<style>
+  /* ── SLIDESHOW ── */
+  .slideshow-wrap {
+    position: relative;
+    width: 100%;
+    max-width: 960px;
+    margin: 0 auto;
+  }
+
+  .slideshow {
+    position: relative;
+    width: 100%;
+    aspect-ratio: 16 / 9;
+    background: var(--ink-soft);
+    overflow: hidden;
+  }
+
+  .slide {
+    position: absolute;
+    inset: 0;
+    opacity: 0;
+    transition: opacity 0.5s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .slide.active {
+    opacity: 1;
+  }
+
+  .slide img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+  }
+
+  .slide-caption {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    padding: 1.2rem 1.5rem;
+    background: linear-gradient(transparent, rgba(14,13,11,0.85));
+    font-family: 'Space Mono', monospace;
+    font-size: 0.65rem;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--cream-dim);
+  }
+
+  .slide-btn {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: rgba(14,13,11,0.6);
+    border: 1px solid var(--rule);
+    color: var(--cream);
+    width: 44px;
+    height: 44px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    font-size: 1.1rem;
+    z-index: 10;
+    transition: background 0.2s;
+  }
+
+  .slide-btn:hover { background: var(--amber-dim); }
+  .slide-btn.prev { left: 1rem; }
+  .slide-btn.next { right: 1rem; }
+
+  .slide-dots {
+    display: flex;
+    justify-content: center;
+    gap: 0.5rem;
+    margin-top: 1.2rem;
+  }
+
+  .dot {
+    width: 6px;
+    height: 6px;
+    background: var(--ink-mid);
+    border: 1px solid var(--amber-dim);
+    cursor: pointer;
+    transition: background 0.2s;
+  }
+
+  .dot.active { background: var(--amber); }
+
+  .slide-counter {
+    text-align: center;
+    font-family: 'Space Mono', monospace;
+    font-size: 0.62rem;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--cream-dim);
+    margin-top: 0.8rem;
+  }
+
+  .gallery-loading {
+    text-align: center;
+    padding: 4rem 0;
+    font-family: 'Space Mono', monospace;
+    font-size: 0.65rem;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--cream-dim);
+  }
+
+  .gallery-empty {
+    text-align: center;
+    padding: 4rem 0;
+    color: var(--cream-dim);
+  }
+</style>
 </head>
 <body>
 
@@ -41,22 +159,9 @@
 
   <section>
     <div class="container">
-      <!--
-        GALLERY-CMS-START
-        Images below are managed via the CMS at /admin.
-        Each item follows the same markup: a .gallery-item containing an <img>.
-        Replace the placeholder divs with <img src="images/your-file.jpg" alt="Description">
-        once photos are uploaded through the CMS.
-      -->
-      <div class="gallery-grid" id="galleryGrid">
-        <div class="gallery-item"><div class="placeholder">GESLP Cohort 01<br>Session Photo</div></div>
-        <div class="gallery-item"><div class="placeholder">GESLP Cohort 01<br>Session Photo</div></div>
-        <div class="gallery-item"><div class="placeholder">Showcase Event</div></div>
-        <div class="gallery-item"><div class="placeholder">Field Research</div></div>
-        <div class="gallery-item"><div class="placeholder">Workshop Day</div></div>
-        <div class="gallery-item"><div class="placeholder">Documentation Shoot</div></div>
+      <div id="galleryContainer">
+        <div class="gallery-loading">Loading photos...</div>
       </div>
-      <!-- GALLERY-CMS-END -->
     </div>
   </section>
 
@@ -111,6 +216,109 @@
       }
     });
   }
+
+  const REPO = 'Theonlyshine/myecoafrica';
+  const BRANCH = 'master';
+  const GALLERY_PATH = 'content/gallery';
+
+  function parseFrontmatter(text) {
+    const match = text.match(/^---\n([\s\S]*?)\n---/);
+    if (!match) return {};
+    const result = {};
+    match[1].split('\n').forEach(line => {
+      const i = line.indexOf(':');
+      if (i === -1) return;
+      const key = line.slice(0, i).trim();
+      const val = line.slice(i + 1).trim().replace(/^['"]|['"]$/g, '');
+      result[key] = val;
+    });
+    return result;
+  }
+
+  async function loadGallery() {
+    const container = document.getElementById('galleryContainer');
+    try {
+      const listRes = await fetch(
+        `https://api.github.com/repos/${REPO}/contents/${GALLERY_PATH}?ref=${BRANCH}`
+      );
+      if (!listRes.ok) throw new Error('Could not fetch gallery list');
+      const files = await listRes.json();
+      const mdFiles = files.filter(f => f.name.endsWith('.md') && f.name !== 'sample-entry.md');
+
+      if (mdFiles.length === 0) {
+        container.innerHTML = '<div class="gallery-empty"><p>No photos yet.</p></div>';
+        return;
+      }
+
+      const entries = await Promise.all(mdFiles.map(async f => {
+        const res = await fetch(f.download_url);
+        const text = await res.text();
+        return parseFrontmatter(text);
+      }));
+
+      const valid = entries.filter(e => e.image);
+
+      if (valid.length === 0) {
+        container.innerHTML = '<div class="gallery-empty"><p>No photos yet.</p></div>';
+        return;
+      }
+
+      buildSlideshow(valid, container);
+    } catch (err) {
+      container.innerHTML = '<div class="gallery-empty"><p>Photos could not be loaded. Please try again shortly.</p></div>';
+    }
+  }
+
+  function buildSlideshow(entries, container) {
+    let current = 0;
+
+    const slides = entries.map((e, i) => `
+      <div class="slide${i === 0 ? ' active' : ''}">
+        <img src="${e.image}" alt="${e.alt || e.title || ''}" loading="${i === 0 ? 'eager' : 'lazy'}" />
+        ${e.title ? `<div class="slide-caption">${e.title}</div>` : ''}
+      </div>
+    `).join('');
+
+    const dots = entries.map((_, i) => `
+      <div class="dot${i === 0 ? ' active' : ''}" data-index="${i}"></div>
+    `).join('');
+
+    container.innerHTML = `
+      <div class="slideshow-wrap">
+        <div class="slideshow" id="slideshow">
+          ${slides}
+          <button class="slide-btn prev" id="prevBtn" aria-label="Previous">&#8592;</button>
+          <button class="slide-btn next" id="nextBtn" aria-label="Next">&#8594;</button>
+        </div>
+        <div class="slide-dots" id="slideDots">${dots}</div>
+        <div class="slide-counter" id="slideCounter">1 / ${entries.length}</div>
+      </div>
+    `;
+
+    const allSlides = container.querySelectorAll('.slide');
+    const allDots = container.querySelectorAll('.dot');
+    const counter = container.querySelector('#slideCounter');
+
+    function goTo(n) {
+      allSlides[current].classList.remove('active');
+      allDots[current].classList.remove('active');
+      current = (n + entries.length) % entries.length;
+      allSlides[current].classList.add('active');
+      allDots[current].classList.add('active');
+      counter.textContent = `${current + 1} / ${entries.length}`;
+    }
+
+    container.querySelector('#prevBtn').addEventListener('click', () => goTo(current - 1));
+    container.querySelector('#nextBtn').addEventListener('click', () => goTo(current + 1));
+    allDots.forEach(dot => {
+      dot.addEventListener('click', () => goTo(Number(dot.dataset.index)));
+    });
+
+    // Auto-advance every 5 seconds
+    setInterval(() => goTo(current + 1), 5000);
+  }
+
+  loadGallery();
 </script>
 </body>
 </html>
