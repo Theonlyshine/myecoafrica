@@ -1,0 +1,34 @@
+backend:
+  name: git-gateway
+  branch: main
+
+# This makes the CMS load media you upload into the right folder automatically.
+media_folder: "images/uploads"
+public_folder: "/images/uploads"
+
+collections:
+  - name: "gallery"
+    label: "Gallery"
+    folder: "content/gallery"
+    create: true
+    slug: "{{slug}}"
+    summary: "{{title}}"
+    fields:
+      - { label: "Title / Caption", name: "title", widget: "string" }
+      - { label: "Photo", name: "image", widget: "image" }
+      - { label: "Alt Text (describe the photo)", name: "alt", widget: "string", required: false }
+      - { label: "Date", name: "date", widget: "datetime" }
+
+  - name: "blog"
+    label: "Insights (Blog)"
+    folder: "content/blog"
+    create: true
+    slug: "{{slug}}"
+    summary: "{{title}} — {{date}}"
+    fields:
+      - { label: "Title", name: "title", widget: "string" }
+      - { label: "Tag / Category", name: "tag", widget: "string", hint: "e.g. Academic Paper, Field Notes, Forthcoming" }
+      - { label: "Date", name: "date", widget: "datetime" }
+      - { label: "Summary (shown on the Insights page)", name: "summary", widget: "text" }
+      - { label: "Cover Image", name: "image", widget: "image", required: false }
+      - { label: "Full Content", name: "body", widget: "markdown" }

@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Contact — MyEcoAfrica</title>
+<meta name="description" content="Get in touch with MyEcoAfrica for research commissions, media projects, or GESLP partnership and sponsorship." />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400;1,500&family=DM+Sans:wght@300;400;500&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet" />
+<link rel="stylesheet" href="css/style.css" />
+<script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
+</head>
+<body>
+
+<header class="site-header">
+  <div class="nav-inner">
+    <a href="index.html" class="logo">MYECO<span>AFRICA</span></a>
+    <nav class="main-nav" id="mainNav">
+      <a href="index.html">Home</a>
+      <a href="what-we-do.html">What We Do</a>
+      <a href="programs.html">Programs</a>
+      <a href="gallery.html">Gallery</a>
+      <a href="blog.html">Insights</a>
+      <a href="contact.html" class="active">Contact</a>
+      <a href="contact.html" class="nav-cta-mobile">Work With Us</a>
+    </nav>
+    <a href="contact.html" class="nav-cta">Work With Us</a>
+    <button class="nav-toggle" id="navToggle" aria-label="Toggle menu">☰</button>
+  </div>
+</header>
+
+<main>
+  <div class="page-header">
+    <div class="container">
+      <span class="eyebrow">Contact</span>
+      <h1 class="display">Tell us what you need. <em>We'll tell you if we're the right fit.</em></h1>
+      <p class="lead" style="max-width:640px;margin-top:1.2rem;">We don't take every engagement, we take the ones we can do well. Every enquiry is read and responded to within 48 hours.</p>
+    </div>
+  </div>
+
+  <section>
+    <div class="container">
+      <div class="card-grid" style="grid-template-columns: 1fr 1fr;">
+
+        <div class="service-card">
+          <span class="num">For Organisations</span>
+          <h3 class="display">Research, Media &amp; Advisory</h3>
+          <form class="contact-form" name="org-enquiry" method="POST" data-netlify="true" netlify-honeypot="bot-field">
+            <input type="hidden" name="form-name" value="org-enquiry" />
+            <p style="display:none;"><label>Don't fill this out: <input name="bot-field" /></label></p>
+
+            <div>
+              <label for="org-name">Your Name</label>
+              <input type="text" id="org-name" name="name" required />
+            </div>
+            <div>
+              <label for="org-org">Organisation</label>
+              <input type="text" id="org-org" name="organisation" required />
+            </div>
+            <div>
+              <label for="org-email">Email Address</label>
+              <input type="email" id="org-email" name="email" required />
+            </div>
+            <div>
+              <label for="org-service">What Do You Need</label>
+              <select id="org-service" name="service" required>
+                <option value="">Select a service</option>
+                <option>Research · Commissioned Report or Analysis</option>
+                <option>Research · Policy Advisory</option>
+                <option>Research · Advisory Retainer</option>
+                <option>Media · Documentary or Impact Film</option>
+                <option>Media · Branded Content Campaign</option>
+                <option>Media · Editorial and Communications</option>
+                <option>Not sure yet, let's talk</option>
+              </select>
+            </div>
+            <div>
+              <label for="org-message">Tell Us About Your Project</label>
+              <textarea id="org-message" name="message" required></textarea>
+            </div>
+            <button type="submit" class="submit-btn">Send Enquiry</button>
+          </form>
+        </div>
+
+        <div class="service-card">
+          <span class="num">For Schools &amp; Sponsors</span>
+          <h3 class="display">GESLP</h3>
+          <form class="contact-form" name="geslp-enquiry" method="POST" data-netlify="true" netlify-honeypot="bot-field">
+            <input type="hidden" name="form-name" value="geslp-enquiry" />
+            <p style="display:none;"><label>Don't fill this out: <input name="bot-field" /></label></p>
+
+            <div>
+              <label for="g-name">Your Name</label>
+              <input type="text" id="g-name" name="name" required />
+            </div>
+            <div>
+              <label for="g-org">School Name (if applicable)</label>
+              <input type="text" id="g-org" name="school" />
+            </div>
+            <div>
+              <label for="g-phone">Phone Number</label>
+              <input type="tel" id="g-phone" name="phone" />
+            </div>
+            <div>
+              <label for="g-email">Email Address</label>
+              <input type="email" id="g-email" name="email" required />
+            </div>
+            <div>
+              <label for="g-interest">What Are You Interested In</label>
+              <select id="g-interest" name="interest" required>
+                <option value="">Select an option</option>
+                <option>Sponsor a School</option>
+                <option>Sponsor a Child</option>
+                <option>Fund a Cohort</option>
+                <option>Bring GESLP to My School</option>
+                <option>Just finding out more for now</option>
+              </select>
+            </div>
+            <div>
+              <label for="g-message">Anything We Should Know</label>
+              <textarea id="g-message" name="message"></textarea>
+            </div>
+            <button type="submit" class="submit-btn">Send Enquiry</button>
+          </form>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <section style="padding-top:0;">
+    <div class="container">
+      <div class="card-grid" style="grid-template-columns: repeat(3, 1fr);">
+        <div class="service-card">
+          <span class="num">Email</span>
+          <p style="margin-top:0.6rem;"><a href="mailto:partnerwithmyecoafrica@gmail.com">partnerwithmyecoafrica@gmail.com</a></p>
+        </div>
+        <div class="service-card">
+          <span class="num">Phone</span>
+          <p style="margin-top:0.6rem;"><a href="tel:+2349077251354">+234 907 725 1354</a></p>
+        </div>
+        <div class="service-card">
+          <span class="num">Instagram</span>
+          <p style="margin-top:0.6rem;"><a href="https://instagram.com/myecoafrica">@myecoafrica</a></p>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer class="site-footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div>
+        <h4>MyEcoAfrica</h4>
+        <p>Sustainability Intelligence for Africa. A commercial sustainability intelligence and education company. Nigeria. Building across West Africa and beyond.</p>
+      </div>
+      <div>
+        <h4>Pages</h4>
+        <a href="what-we-do.html">What We Do</a>
+        <a href="programs.html">Programs</a>
+        <a href="gallery.html">Gallery</a>
+        <a href="blog.html">Insights</a>
+        <a href="contact.html">Contact</a>
+      </div>
+      <div>
+        <h4>Contact</h4>
+        <a href="mailto:partnerwithmyecoafrica@gmail.com">partnerwithmyecoafrica@gmail.com</a>
+        <a href="tel:+2349077251354">+234 907 725 1354</a>
+        <a href="https://instagram.com/myecoafrica">@myecoafrica</a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© 2026 MyEcoAfrica. All rights reserved.</span>
+      <span>myecoafrica.org</span>
+    </div>
+  </div>
+</footer>
+
+<script src="js/main.js"></script>
+<script>
+  if (window.netlifyIdentity) {
+    window.netlifyIdentity.on('init', user => {
+      if (!user) {
+        window.netlifyIdentity.on('login', () => {
+          document.location.href = '/admin/';
+        });
+      }
+    });
+  }
+</script>
+</body>
+</html>

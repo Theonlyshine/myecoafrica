@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Gallery — MyEcoAfrica</title>
+<meta name="description" content="Photos and media from MyEcoAfrica's research, media, and GESLP programmes across Nigeria." />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400;1,500&family=DM+Sans:wght@300;400;500&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet" />
+<link rel="stylesheet" href="css/style.css" />
+<script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
+</head>
+<body>
+
+<header class="site-header">
+  <div class="nav-inner">
+    <a href="index.html" class="logo">MYECO<span>AFRICA</span></a>
+    <nav class="main-nav" id="mainNav">
+      <a href="index.html">Home</a>
+      <a href="what-we-do.html">What We Do</a>
+      <a href="programs.html">Programs</a>
+      <a href="gallery.html" class="active">Gallery</a>
+      <a href="blog.html">Insights</a>
+      <a href="contact.html">Contact</a>
+      <a href="contact.html" class="nav-cta-mobile">Work With Us</a>
+    </nav>
+    <a href="contact.html" class="nav-cta">Work With Us</a>
+    <button class="nav-toggle" id="navToggle" aria-label="Toggle menu">☰</button>
+  </div>
+</header>
+
+<main>
+  <div class="page-header">
+    <div class="container">
+      <span class="eyebrow">Gallery</span>
+      <h1 class="display">The proof, in <em>pictures.</em></h1>
+      <p class="lead" style="max-width:640px;margin-top:1.2rem;">Every program we run, we document. Students, sessions, workshops, and the real moments behind the research and stories we publish.</p>
+    </div>
+  </div>
+
+  <section>
+    <div class="container">
+      <!--
+        GALLERY-CMS-START
+        Images below are managed via the CMS at /admin.
+        Each item follows the same markup: a .gallery-item containing an <img>.
+        Replace the placeholder divs with <img src="images/your-file.jpg" alt="Description">
+        once photos are uploaded through the CMS.
+      -->
+      <div class="gallery-grid" id="galleryGrid">
+        <div class="gallery-item"><div class="placeholder">GESLP Cohort 01<br>Session Photo</div></div>
+        <div class="gallery-item"><div class="placeholder">GESLP Cohort 01<br>Session Photo</div></div>
+        <div class="gallery-item"><div class="placeholder">Showcase Event</div></div>
+        <div class="gallery-item"><div class="placeholder">Field Research</div></div>
+        <div class="gallery-item"><div class="placeholder">Workshop Day</div></div>
+        <div class="gallery-item"><div class="placeholder">Documentation Shoot</div></div>
+      </div>
+      <!-- GALLERY-CMS-END -->
+    </div>
+  </section>
+
+  <section class="cta-band">
+    <div class="container">
+      <span class="section-label">Be Part of the Next Cohort</span>
+      <h2 class="display">Help us put more proof on this page.</h2>
+      <div class="btn-row">
+        <a href="contact.html" class="btn btn-primary">Fund a Cohort →</a>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer class="site-footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div>
+        <h4>MyEcoAfrica</h4>
+        <p>Sustainability Intelligence for Africa. A commercial sustainability intelligence and education company. Nigeria. Building across West Africa and beyond.</p>
+      </div>
+      <div>
+        <h4>Pages</h4>
+        <a href="what-we-do.html">What We Do</a>
+        <a href="programs.html">Programs</a>
+        <a href="gallery.html">Gallery</a>
+        <a href="blog.html">Insights</a>
+        <a href="contact.html">Contact</a>
+      </div>
+      <div>
+        <h4>Contact</h4>
+        <a href="mailto:partnerwithmyecoafrica@gmail.com">partnerwithmyecoafrica@gmail.com</a>
+        <a href="tel:+2349077251354">+234 907 725 1354</a>
+        <a href="https://instagram.com/myecoafrica">@myecoafrica</a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© 2026 MyEcoAfrica. All rights reserved.</span>
+      <span>myecoafrica.org</span>
+    </div>
+  </div>
+</footer>
+
+<script src="js/main.js"></script>
+<script>
+  if (window.netlifyIdentity) {
+    window.netlifyIdentity.on('init', user => {
+      if (!user) {
+        window.netlifyIdentity.on('login', () => {
+          document.location.href = '/admin/';
+        });
+      }
+    });
+  }
+</script>
+</body>
+</html>

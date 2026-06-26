@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Insights — MyEcoAfrica</title>
+<meta name="description" content="Research notes, field updates, and the thinking behind MyEcoAfrica's work on Africa's sustainability transition." />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400;1,500&family=DM+Sans:wght@300;400;500&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet" />
+<link rel="stylesheet" href="css/style.css" />
+<script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
+</head>
+<body>
+
+<header class="site-header">
+  <div class="nav-inner">
+    <a href="index.html" class="logo">MYECO<span>AFRICA</span></a>
+    <nav class="main-nav" id="mainNav">
+      <a href="index.html">Home</a>
+      <a href="what-we-do.html">What We Do</a>
+      <a href="programs.html">Programs</a>
+      <a href="gallery.html">Gallery</a>
+      <a href="blog.html" class="active">Insights</a>
+      <a href="contact.html">Contact</a>
+      <a href="contact.html" class="nav-cta-mobile">Work With Us</a>
+    </nav>
+    <a href="contact.html" class="nav-cta">Work With Us</a>
+    <button class="nav-toggle" id="navToggle" aria-label="Toggle menu">☰</button>
+  </div>
+</header>
+
+<main>
+  <div class="page-header">
+    <div class="container">
+      <span class="eyebrow">Insights</span>
+      <h1 class="display">The thinking behind the work. <em>Published.</em></h1>
+      <p class="lead" style="max-width:640px;margin-top:1.2rem;">Research we commission, publish, and stand behind, available to the organisations who need it.</p>
+    </div>
+  </div>
+
+  <section>
+    <div class="container">
+      <!--
+        BLOG-CMS-START
+        Posts below are managed via the CMS at /admin.
+        Each .blog-card represents one post. Add new cards (or generate them
+        from the CMS collection) following this same markup pattern.
+      -->
+      <div class="blog-grid" id="blogGrid">
+
+        <div class="blog-card">
+          <span class="mono">Academic Paper · IPTC · 2026</span>
+          <h3 class="display">Governing the Nexus: Institutional Fragmentation and the Constrained Adoption of Biogas in West Africa</h3>
+          <p>Why does clean energy adoption stall in West Africa? Not because of missing technology, but institutions that don't speak to each other. This paper makes that case.</p>
+          <div class="btn-row"><a href="#" class="btn btn-ghost">Read More →</a></div>
+        </div>
+
+        <div class="blog-card">
+          <span class="mono">Forthcoming · Energy Policy · 2026</span>
+          <h3 class="display">The Education Gap: Why African Secondary Schools Are Not Preparing Students for the Sustainability Economy</h3>
+          <p>A structured look at what sustainability literacy means in practice, what schools are and are not doing, and what changes when young people are actually taught to understand it.</p>
+          <div class="btn-row"><a href="#" class="btn btn-ghost">Read More →</a></div>
+        </div>
+
+        <div class="blog-card">
+          <span class="mono">Field Notes · Ongoing · 2026</span>
+          <h3 class="display">What Schools Actually Want: Early Lessons from GESLP</h3>
+          <p>Administrators don't want a programme. They want proof. Here is what the first round of school conversations taught us, and how it shapes everything we design.</p>
+          <div class="btn-row"><a href="#" class="btn btn-ghost">Read More →</a></div>
+        </div>
+
+      </div>
+      <!-- BLOG-CMS-END -->
+    </div>
+  </section>
+
+  <section class="cta-band">
+    <div class="container">
+      <span class="section-label">Commission a Report</span>
+      <h2 class="display">Need analysis on a specific question?</h2>
+      <p class="lead" style="margin:1.2rem auto 0;">We take commissioned research from NGOs, think tanks, development finance institutions, and government bodies.</p>
+      <div class="btn-row">
+        <a href="contact.html" class="btn btn-primary">Commission Research →</a>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer class="site-footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div>
+        <h4>MyEcoAfrica</h4>
+        <p>Sustainability Intelligence for Africa. A commercial sustainability intelligence and education company. Nigeria. Building across West Africa and beyond.</p>
+      </div>
+      <div>
+        <h4>Pages</h4>
+        <a href="what-we-do.html">What We Do</a>
+        <a href="programs.html">Programs</a>
+        <a href="gallery.html">Gallery</a>
+        <a href="blog.html">Insights</a>
+        <a href="contact.html">Contact</a>
+      </div>
+      <div>
+        <h4>Contact</h4>
+        <a href="mailto:partnerwithmyecoafrica@gmail.com">partnerwithmyecoafrica@gmail.com</a>
+        <a href="tel:+2349077251354">+234 907 725 1354</a>
+        <a href="https://instagram.com/myecoafrica">@myecoafrica</a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© 2026 MyEcoAfrica. All rights reserved.</span>
+      <span>myecoafrica.org</span>
+    </div>
+  </div>
+</footer>
+
+<script src="js/main.js"></script>
+<script>
+  if (window.netlifyIdentity) {
+    window.netlifyIdentity.on('init', user => {
+      if (!user) {
+        window.netlifyIdentity.on('login', () => {
+          document.location.href = '/admin/';
+        });
+      }
+    });
+  }
+</script>
+</body>
+</html>
