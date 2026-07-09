@@ -73,8 +73,7 @@ header.site-header {
   position: sticky;
   top: 0;
   z-index: 50;
-  background: rgba(255,255,255,0.96);
-  backdrop-filter: blur(10px);
+  background: var(--white);
   border-bottom: 1px solid var(--rule);
   box-shadow: 0 1px 16px rgba(13,13,11,0.06);
 }
@@ -95,6 +94,9 @@ header.site-header {
   color: var(--ink);
 }
 .logo span { color: var(--green); }
+
+/* Hidden on desktop, shown inside mobile nav drawer */
+.nav-logo { display: none; }
 
 nav.main-nav { display: flex; gap: 2.2rem; }
 nav.main-nav a {
@@ -613,8 +615,27 @@ a:focus-visible, button:focus-visible, input:focus-visible, select:focus-visible
 @media (max-width: 860px) {
   .grid-cols-3 { grid-template-columns: repeat(2, 1fr); }
 
-  /* Ensure nav drawer sits above page so its white background is solid */
-  nav.main-nav { z-index: 200; }
+  /* Nav drawer: fix stacking context (backdrop-filter was trapping it) */
+  nav.main-nav { z-index: 200; padding-top: 1.5rem; }
+
+  /* Logo inside drawer */
+  .nav-logo {
+    display: block;
+    font-family: 'Space Mono', monospace;
+    font-size: 0.95rem;
+    letter-spacing: 0.04em;
+    color: var(--ink);
+    text-transform: none;
+    padding-bottom: 1.4rem;
+    border-bottom: 1px solid var(--rule);
+    margin-bottom: 0.4rem;
+  }
+  .nav-logo span { color: var(--green); }
+}
+
+@media (max-width: 640px) {
+  /* Centre social icons in the footer on small screens */
+  .social-icons { justify-content: center; }
 }
 
 @media (max-width: 640px) {
