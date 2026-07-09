@@ -428,6 +428,37 @@ footer.site-footer {
   margin-bottom: 0.6rem;
 }
 .footer-grid a:hover { color: var(--green); }
+
+/* ── SOCIAL ICONS ── */
+.social-icons {
+  display: flex;
+  gap: 0.6rem;
+  flex-wrap: wrap;
+  margin-top: 0.5rem;
+}
+.social-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 38px;
+  height: 38px;
+  border: 1px solid var(--rule);
+  border-radius: 4px;
+  color: var(--ink-mid);
+  transition: color 0.2s, border-color 0.2s, background 0.2s;
+  flex-shrink: 0;
+}
+.social-icon svg {
+  width: 17px;
+  height: 17px;
+  display: block;
+}
+.social-icon:hover {
+  color: var(--green) !important;
+  border-color: var(--green);
+  background: var(--green-light);
+}
+
 .footer-bottom {
   margin-top: 3rem;
   padding-top: 1.5rem;
