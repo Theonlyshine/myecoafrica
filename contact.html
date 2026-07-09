@@ -10,6 +10,20 @@
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400;1,500&family=Plus+Jakarta+Sans:wght@300;400;500&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet" />
 <link rel="stylesheet" href="css/style.css" />
 <script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
+<style>
+  .contact-tabs { display:flex; border-bottom:1px solid var(--rule); margin-bottom:2rem; }
+  .contact-tab {
+    font-family:'Space Mono',monospace; font-size:0.7rem; letter-spacing:0.12em;
+    text-transform:uppercase; color:var(--ink-light); background:none; border:none;
+    border-bottom:2px solid transparent; padding:0.75rem 1.5rem 0.65rem;
+    cursor:pointer; transition:color 0.15s,border-color 0.15s; margin-bottom:-1px;
+  }
+  .contact-tab:hover { color:var(--ink); }
+  .contact-tab.active { color:var(--green); border-bottom-color:var(--green); }
+  .contact-panel[hidden] { display:none; }
+  .contact-panel .service-card { max-width:620px; }
+  .contact-reach { margin-top:2.5rem; padding-top:2rem; border-top:1px solid var(--rule); display:flex; justify-content:center; }
+</style>
 </head>
 <body>
 
@@ -42,15 +56,18 @@
 
   <section>
     <div class="container">
-      <div class="card-grid grid-cols-2">
 
+      <div class="contact-tabs" role="tablist">
+        <button class="contact-tab active" role="tab" aria-selected="true" aria-controls="panel-org" id="tab-org">For Organisations</button>
+        <button class="contact-tab" role="tab" aria-selected="false" aria-controls="panel-geslp" id="tab-geslp">For Schools &amp; Sponsors</button>
+      </div>
+
+      <div class="contact-panel" id="panel-org" role="tabpanel" aria-labelledby="tab-org">
         <div class="service-card">
-          <span class="num">For Organisations</span>
           <h3 class="display">Research, Media &amp; Advisory</h3>
           <form class="contact-form" name="org-enquiry" method="POST" data-netlify="true" netlify-honeypot="bot-field">
             <input type="hidden" name="form-name" value="org-enquiry" />
             <p style="display:none;"><label>Don't fill this out: <input name="bot-field" /></label></p>
-
             <div>
               <label for="org-name">Your Name</label>
               <input type="text" id="org-name" name="name" required />
@@ -83,14 +100,14 @@
             <button type="submit" class="submit-btn">Send Enquiry</button>
           </form>
         </div>
+      </div>
 
+      <div class="contact-panel" id="panel-geslp" role="tabpanel" aria-labelledby="tab-geslp" hidden>
         <div class="service-card">
-          <span class="num">For Schools &amp; Sponsors</span>
           <h3 class="display">GESLP</h3>
           <form class="contact-form" name="geslp-enquiry" method="POST" data-netlify="true" netlify-honeypot="bot-field">
             <input type="hidden" name="form-name" value="geslp-enquiry" />
             <p style="display:none;"><label>Don't fill this out: <input name="bot-field" /></label></p>
-
             <div>
               <label for="g-name">Your Name</label>
               <input type="text" id="g-name" name="name" required />
@@ -125,27 +142,28 @@
             <button type="submit" class="submit-btn">Send Enquiry</button>
           </form>
         </div>
-
       </div>
-    </div>
-  </section>
 
-  <section style="padding-top:0;">
-    <div class="container">
-      <div class="card-grid grid-cols-3">
-        <div class="service-card">
-          <span class="num">Email</span>
-          <p style="margin-top:0.6rem;"><a href="mailto:partnerwithmyecoafrica@gmail.com">partnerwithmyecoafrica@gmail.com</a></p>
-        </div>
-        <div class="service-card">
-          <span class="num">Phone</span>
-          <p style="margin-top:0.6rem;"><a href="tel:+2349077251354">+234 907 725 1354</a></p>
-        </div>
-        <div class="service-card">
-          <span class="num">Instagram</span>
-          <p style="margin-top:0.6rem;"><a href="https://instagram.com/myecoafrica">@myecoafrica</a></p>
+      <div class="contact-reach">
+        <div class="social-icons">
+          <a href="mailto:partnerwithmyecoafrica@gmail.com" class="social-icon" aria-label="Email" title="partnerwithmyecoafrica@gmail.com">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+          </a>
+          <a href="tel:+2349077251354" class="social-icon" aria-label="Phone" title="+234 907 725 1354">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12 19.79 19.79 0 0 1 1.62 3.38 2 2 0 0 1 3.6 1.27h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.91 9a16 16 0 0 0 6 6l1.27-.95a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+          </a>
+          <a href="https://instagram.com/myecoafrica.co" class="social-icon" aria-label="Instagram" title="@myecoafrica.co" target="_blank" rel="noopener noreferrer">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>
+          </a>
+          <a href="https://linkedin.com/company/myecoafrica" class="social-icon" aria-label="LinkedIn" title="myecoafrica on LinkedIn" target="_blank" rel="noopener noreferrer">
+            <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg>
+          </a>
+          <a href="https://x.com/myecoafrica" class="social-icon" aria-label="X (Twitter)" title="@myecoafrica on X" target="_blank" rel="noopener noreferrer">
+            <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
+          </a>
         </div>
       </div>
+
     </div>
   </section>
 </main>
@@ -190,6 +208,21 @@
 </footer>
 
 <script src="js/main.js"></script>
+<script>
+  (function () {
+    var tabs = document.querySelectorAll('.contact-tab');
+    var panels = document.querySelectorAll('.contact-panel');
+    tabs.forEach(function (tab) {
+      tab.addEventListener('click', function () {
+        tabs.forEach(function (t) { t.classList.remove('active'); t.setAttribute('aria-selected', 'false'); });
+        panels.forEach(function (p) { p.setAttribute('hidden', ''); });
+        tab.classList.add('active');
+        tab.setAttribute('aria-selected', 'true');
+        document.getElementById(tab.getAttribute('aria-controls')).removeAttribute('hidden');
+      });
+    });
+  })();
+</script>
 <script>
   if (window.netlifyIdentity) {
     window.netlifyIdentity.on('init', user => {
