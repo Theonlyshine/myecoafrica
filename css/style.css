@@ -613,37 +613,8 @@ a:focus-visible, button:focus-visible, input:focus-visible, select:focus-visible
 @media (max-width: 860px) {
   .grid-cols-3 { grid-template-columns: repeat(2, 1fr); }
 
-  /* Mobile nav: each link becomes a distinct green button */
-  nav.main-nav {
-    gap: 0.5rem;
-    padding: 5.5rem 1.5rem 2rem;
-    overflow-y: auto;
-  }
-  nav.main-nav a {
-    display: block;
-    background: var(--green);
-    color: var(--white);
-    padding: 1rem 1.4rem;
-    border-radius: 4px;
-    white-space: normal;
-    font-size: 0.72rem;
-  }
-  nav.main-nav a:hover,
-  nav.main-nav a.active {
-    background: var(--green-dark);
-    color: var(--white);
-  }
-  nav.main-nav .nav-cta-mobile {
-    background: var(--ink);
-    color: var(--white);
-    margin-top: 0.5rem;
-    border-radius: 4px;
-    padding: 1rem 1.4rem;
-  }
-  nav.main-nav .nav-cta-mobile:hover {
-    background: var(--ink-mid);
-    color: var(--white);
-  }
+  /* Ensure nav drawer sits above page content so white background is visible */
+  nav.main-nav { z-index: 200; }
 }
 
 @media (max-width: 640px) {
