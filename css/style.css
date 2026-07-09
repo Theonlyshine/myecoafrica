@@ -338,6 +338,13 @@ blockquote.pull {
   border-top: 1px solid var(--rule);
 }
 .service-card ul li:first-child { border-top: none; }
+.pillar-icon {
+  width: 34px;
+  height: 34px;
+  color: var(--green);
+  display: block;
+  margin-bottom: 1rem;
+}
 
 /* ── MAP SECTION ── */
 .section-map {
