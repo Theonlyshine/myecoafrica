@@ -245,7 +245,7 @@ nav.main-nav a.active { color: var(--green); }
 }
 .stat-grid {
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
+  grid-template-columns: repeat(3, 1fr);
 }
 .stat-cell {
   padding: 2.6rem clamp(1.2rem, 3vw, 2rem);
