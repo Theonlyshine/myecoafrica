@@ -410,7 +410,7 @@ footer.site-footer {
 }
 .footer-grid {
   display: grid;
-  grid-template-columns: 2fr 1fr 1fr;
+  grid-template-columns: 1fr 1fr;
   gap: 2.5rem;
 }
 .footer-grid h4 {
@@ -603,8 +603,8 @@ a:focus-visible, button:focus-visible, input:focus-visible, select:focus-visible
 
 /* ── MOBILE OPTIMISATION ── */
 
-/* Fix: .footer-grid a { display:block } overrides .social-icon flex via cascade */
-.footer-grid .social-icon { display: flex; margin-bottom: 0; }
+/* Fix: .footer-grid a { display:block } overrides .social-icon flex — use higher specificity */
+.footer-grid .social-icons .social-icon { display: flex; margin-bottom: 0; }
 
 /* Responsive grid helpers (replace inline style= attributes in HTML) */
 .grid-cols-2 { grid-template-columns: repeat(2, 1fr); }
