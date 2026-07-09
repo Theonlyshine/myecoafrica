@@ -613,8 +613,13 @@ a:focus-visible, button:focus-visible, input:focus-visible, select:focus-visible
 @media (max-width: 860px) {
   .grid-cols-3 { grid-template-columns: repeat(2, 1fr); }
 
-  /* Ensure nav drawer sits above page content so white background is visible */
-  nav.main-nav { z-index: 200; }
+  /* Nav drawer: sit above page, tighter spacing so all items fit without scrolling */
+  nav.main-nav {
+    z-index: 200;
+    gap: 1rem;
+    padding: 4.5rem 2rem 1.5rem;
+    overflow: hidden;
+  }
 }
 
 @media (max-width: 640px) {
