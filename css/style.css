@@ -600,3 +600,52 @@ a:focus-visible, button:focus-visible, input:focus-visible, select:focus-visible
   outline: 2px solid var(--green);
   outline-offset: 3px;
 }
+
+/* ── MOBILE OPTIMISATION ── */
+
+/* Fix: .footer-grid a { display:block } overrides .social-icon flex via cascade */
+.footer-grid .social-icon { display: flex; margin-bottom: 0; }
+
+/* Responsive grid helpers (replace inline style= attributes in HTML) */
+.grid-cols-2 { grid-template-columns: repeat(2, 1fr); }
+.grid-cols-3 { grid-template-columns: repeat(3, 1fr); }
+
+@media (max-width: 860px) {
+  .grid-cols-3 { grid-template-columns: repeat(2, 1fr); }
+}
+
+@media (max-width: 640px) {
+  /* Spacing */
+  section { padding: 2.5rem 0; }
+  .page-header { padding: 2.2rem 0 1.6rem; }
+
+  /* Typography */
+  h1.display { font-size: clamp(2rem, 9.5vw, 2.8rem); }
+  p.lead { font-size: 1rem; }
+  blockquote.pull { font-size: 1.1rem; padding-left: 1rem; }
+
+  /* Grids */
+  .grid-cols-2,
+  .grid-cols-3 { grid-template-columns: 1fr; }
+
+  /* Stat strip: single column on small screens */
+  .stat-grid { grid-template-columns: 1fr; }
+  .stat-cell { border-right: none; border-bottom: 1px solid rgba(255,255,255,0.15); }
+  .stat-cell:last-child { border-bottom: none; }
+
+  /* Map stats: single column */
+  .map-stats { grid-template-columns: 1fr; }
+
+  /* Buttons: stack and fill width in hero */
+  .hero .btn-row { flex-direction: column; align-items: stretch; }
+  .hero .btn-row .btn { text-align: center; }
+  .cta-band .btn-row { flex-direction: column; align-items: center; }
+  .cta-band .btn-row .btn { min-width: 240px; text-align: center; }
+
+  /* Footer bottom */
+  .footer-bottom { flex-direction: column; gap: 0.3rem; }
+
+  /* Container padding tighter on very small screens */
+  .container { padding: 0 1.2rem; }
+  .nav-inner { padding: 0.9rem 1.2rem; }
+}
