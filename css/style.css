@@ -339,11 +339,13 @@ blockquote.pull {
 }
 .service-card ul li:first-child { border-top: none; }
 .pillar-icon {
-  width: 34px;
-  height: 34px;
+  width: 15px;
+  height: 15px;
   color: var(--green);
-  display: block;
-  margin-bottom: 1rem;
+  display: inline-block;
+  vertical-align: middle;
+  margin-right: 0.4rem;
+  flex-shrink: 0;
 }
 
 /* ── MAP SECTION ── */
