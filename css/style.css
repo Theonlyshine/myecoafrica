@@ -32,10 +32,10 @@ body {
 
 /* ── TYPOGRAPHY ── */
 .display {
-  font-family: 'Barlow Condensed', sans-serif;
+  font-family: 'Syne', sans-serif;
   font-weight: 800;
   line-height: 1.1;
-  letter-spacing: -0.01em;
+  letter-spacing: 0.01em;
   text-transform: uppercase;
   color: var(--ink);
 }
@@ -174,10 +174,10 @@ nav.main-nav .nav-cta-mobile { display: none; }
     pointer-events: all;
   }
   nav.main-nav a {
-    font-family: 'Barlow Condensed', sans-serif;
-    font-size: clamp(1.1rem, 5vw, 1.6rem);
-    font-weight: 700;
-    letter-spacing: 0.04em;
+    font-family: 'Syne', sans-serif;
+    font-size: clamp(0.9rem, 3.5vw, 1.1rem);
+    font-weight: 800;
+    letter-spacing: -0.01em;
     text-transform: uppercase;
     color: rgba(255,255,255,0.75);
   }
@@ -189,12 +189,12 @@ nav.main-nav .nav-cta-mobile { display: none; }
   .nav-cta { display: none; }
   nav.main-nav .nav-cta-mobile {
     display: block;
-    font-family: 'Barlow Condensed', sans-serif;
-    font-size: clamp(1rem, 4.5vw, 1.4rem);
-    font-weight: 700;
+    font-family: 'Syne', sans-serif;
+    font-size: clamp(0.85rem, 3.5vw, 1rem);
+    font-weight: 800;
     text-transform: uppercase;
     color: var(--green);
-    letter-spacing: 0.04em;
+    letter-spacing: -0.01em;
     margin-top: 1rem;
     padding-top: 1.5rem;
     border-top: 1px solid rgba(255,255,255,0.12);
@@ -254,7 +254,7 @@ nav.main-nav .nav-cta-mobile { display: none; }
   background: var(--white);
   padding-top: clamp(5rem, 10vw, 9rem);
   padding-bottom: clamp(5rem, 10vw, 9rem);
-  overflow: hidden;
+  overflow: clip;
   border-bottom: 1px solid var(--rule);
 }
 #hero-canvas {
@@ -294,7 +294,7 @@ nav.main-nav .nav-cta-mobile { display: none; }
 }
 .stat-cell:last-child { border-right: none; }
 .stat-num {
-  font-family: 'Barlow Condensed', sans-serif;
+  font-family: 'Syne', sans-serif;
   font-size: clamp(2rem, 3.5vw, 3rem);
   color: var(--white);
   font-weight: 800;
@@ -317,9 +317,7 @@ nav.main-nav .nav-cta-mobile { display: none; }
 
 /* ── ARMS BAND (3-arm showcase, replaces green stat strip) ── */
 .arms-band {
-  background: var(--ink);
-  border-top: 1px solid rgba(255,255,255,0.08);
-  border-bottom: 1px solid rgba(255,255,255,0.08);
+  background: var(--green);
 }
 .arms-band-inner {
   display: grid;
@@ -330,7 +328,7 @@ nav.main-nav .nav-cta-mobile { display: none; }
 }
 .arm-band-item {
   padding: 2.4rem clamp(0.8rem, 2vw, 1.8rem);
-  border-right: 1px solid rgba(255,255,255,0.08);
+  border-right: 1px solid rgba(255,255,255,0.22);
   display: flex;
   flex-direction: column;
   gap: 0.4rem;
@@ -339,23 +337,23 @@ nav.main-nav .nav-cta-mobile { display: none; }
 .arm-band-num {
   font-family: 'Space Mono', monospace;
   font-size: 0.58rem;
-  color: var(--green);
+  color: rgba(255,255,255,0.65);
   letter-spacing: 0.15em;
   margin-bottom: 0.2rem;
 }
 .arm-band-name {
-  font-family: 'Barlow Condensed', sans-serif;
-  font-weight: 700;
+  font-family: 'Syne', sans-serif;
+  font-weight: 800;
   font-size: clamp(1rem, 1.3vw, 1.2rem);
   color: var(--white);
   text-transform: uppercase;
-  letter-spacing: 0.03em;
+  letter-spacing: 0.01em;
   line-height: 1.2;
 }
 .arm-band-desc {
   font-family: 'DM Sans', sans-serif;
   font-size: 0.8rem;
-  color: rgba(255,255,255,0.42);
+  color: rgba(255,255,255,0.78);
   line-height: 1.55;
   margin-top: 0.1rem;
 }
@@ -363,7 +361,7 @@ nav.main-nav .nav-cta-mobile { display: none; }
   .arms-band-inner { grid-template-columns: 1fr; }
   .arm-band-item {
     border-right: none;
-    border-bottom: 1px solid rgba(255,255,255,0.08);
+    border-bottom: 1px solid rgba(255,255,255,0.22);
     padding: 1.6rem 0;
   }
   .arm-band-item:last-child { border-bottom: none; }
@@ -382,7 +380,7 @@ nav.main-nav .nav-cta-mobile { display: none; }
 
 /* ── PULL QUOTE ── */
 blockquote.pull {
-  font-family: 'Barlow Condensed', sans-serif;
+  font-family: 'Syne', sans-serif;
   font-style: normal;
   font-weight: 700;
   font-size: clamp(1.3rem, 2.4vw, 1.9rem);
@@ -476,7 +474,7 @@ blockquote.pull {
   box-shadow: 0 4px 16px rgba(29,167,96,0.1);
 }
 .map-stat-num {
-  font-family: 'Barlow Condensed', sans-serif;
+  font-family: 'Syne', sans-serif;
   font-size: 2.2rem;
   color: var(--green);
   font-weight: 800;
@@ -873,7 +871,7 @@ nav.main-nav { gap: 1.8rem; }
 }
 .arm-row:hover { background: var(--off-white); }
 .arm-index {
-  font-family: 'Barlow Condensed', sans-serif;
+  font-family: 'Syne', sans-serif;
   font-size: clamp(1.4rem, 1.8vw, 1.8rem);
   font-weight: 800;
   color: var(--green);
@@ -942,7 +940,7 @@ nav.main-nav { gap: 1.8rem; }
   align-items: center;
 }
 .geslp-num {
-  font-family: 'Barlow Condensed', sans-serif;
+  font-family: 'Syne', sans-serif;
   font-size: clamp(5rem, 11vw, 9rem);
   font-weight: 800;
   color: var(--green);
@@ -973,7 +971,7 @@ nav.main-nav { gap: 1.8rem; }
 }
 .stat-row-item { text-align: center; }
 .stat-row-num {
-  font-family: 'Barlow Condensed', sans-serif;
+  font-family: 'Syne', sans-serif;
   font-size: clamp(2rem, 4vw, 3.4rem);
   font-weight: 800;
   color: var(--green);
