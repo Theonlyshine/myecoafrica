@@ -34,8 +34,9 @@ body {
 .display {
   font-family: 'Syne', sans-serif;
   font-weight: 800;
-  line-height: 1.08;
-  letter-spacing: -0.02em;
+  line-height: 1.1;
+  letter-spacing: 0.01em;
+  text-transform: uppercase;
   color: var(--ink);
 }
 .display em {
@@ -50,9 +51,9 @@ body {
   text-transform: uppercase;
 }
 
-h1.display { font-size: clamp(2.8rem, 7vw, 5.5rem); }
-h2.display { font-size: clamp(2rem, 4.5vw, 3.6rem); }
-h3.display { font-size: clamp(1.3rem, 2.4vw, 2rem); }
+h1.display { font-size: clamp(1.9rem, 4.5vw, 3.4rem); }
+h2.display { font-size: clamp(1.5rem, 3.2vw, 2.6rem); }
+h3.display { font-size: clamp(1.1rem, 1.8vw, 1.5rem); }
 
 p { font-size: 1rem; color: var(--ink-mid); line-height: 1.8; }
 p.lead { font-size: 1.15rem; color: var(--ink-mid); }
@@ -405,10 +406,10 @@ blockquote.pull {
   box-shadow: 0 4px 16px rgba(29,167,96,0.1);
 }
 .map-stat-num {
-  font-family: 'Cormorant Garamond', serif;
+  font-family: 'Syne', sans-serif;
   font-size: 2.2rem;
   color: var(--green);
-  font-weight: 500;
+  font-weight: 800;
   line-height: 1;
 }
 .map-stat-label {
@@ -575,7 +576,7 @@ input, select, textarea {
   border: 1.5px solid var(--rule);
   color: var(--ink);
   padding: 0.85rem 1rem;
-  font-family: 'Plus Jakarta Sans', sans-serif;
+  font-family: 'Inter', sans-serif;
   font-size: 0.95rem;
   border-radius: 4px;
   transition: border-color 0.2s;
@@ -770,7 +771,7 @@ nav.main-nav { gap: 1.8rem; }
 .arm-rows { margin-top: 3.5rem; border-top: 1px solid var(--rule); }
 .arm-row {
   display: grid;
-  grid-template-columns: 90px 220px 1fr;
+  grid-template-columns: 90px minmax(220px, 1fr) 2fr;
   gap: 2.5rem;
   padding: 3rem 0;
   border-bottom: 1px solid var(--rule);
@@ -779,11 +780,11 @@ nav.main-nav { gap: 1.8rem; }
 }
 .arm-row:hover { background: var(--off-white); padding-left: 1.2rem; padding-right: 1.2rem; margin: 0 -1.2rem; }
 .arm-index {
-  font-family: 'Cormorant Garamond', serif;
-  font-size: clamp(2.8rem, 5vw, 4rem);
-  font-weight: 300;
+  font-family: 'Syne', sans-serif;
+  font-size: clamp(2.4rem, 4vw, 3.4rem);
+  font-weight: 800;
   color: var(--green);
-  opacity: 0.55;
+  opacity: 0.4;
   line-height: 1;
 }
 .arm-row h3.display { font-size: clamp(1.4rem, 2.2vw, 1.9rem); line-height: 1.2; }
@@ -846,9 +847,9 @@ nav.main-nav { gap: 1.8rem; }
   align-items: center;
 }
 .geslp-num {
-  font-family: 'Cormorant Garamond', serif;
+  font-family: 'Syne', sans-serif;
   font-size: clamp(5rem, 11vw, 9rem);
-  font-weight: 300;
+  font-weight: 800;
   color: var(--green);
   line-height: 1;
 }
