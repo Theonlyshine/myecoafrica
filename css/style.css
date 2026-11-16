@@ -51,9 +51,9 @@ body {
   text-transform: uppercase;
 }
 
-h1.display { font-size: clamp(1.4rem, 2.5vw, 2.4rem); }
-h2.display { font-size: clamp(1.1rem, 1.9vw, 1.7rem); }
-h3.display { font-size: clamp(0.88rem, 1.1vw, 1.05rem); }
+h1.display { font-size: clamp(1.7rem, 3.2vw, 2.9rem); }
+h2.display { font-size: clamp(1.3rem, 2.2vw, 2rem); }
+h3.display { font-size: clamp(1rem, 1.3vw, 1.3rem); }
 
 p { font-size: 1rem; color: var(--ink-mid); line-height: 1.8; }
 p.lead { font-size: 1.15rem; color: var(--ink-mid); }
@@ -696,9 +696,9 @@ a:focus-visible, button:focus-visible, input:focus-visible, select:focus-visible
   .page-header { padding: 2.2rem 0 1.6rem; }
 
   /* Typography */
-  h1.display { font-size: clamp(1.3rem, 7.5vw, 2rem); }
-  h2.display { font-size: clamp(1rem, 6vw, 1.6rem); }
-  h3.display { font-size: clamp(0.85rem, 4vw, 1rem); }
+  h1.display { font-size: clamp(1.6rem, 8vw, 2.4rem); }
+  h2.display { font-size: clamp(1.2rem, 6vw, 1.8rem); }
+  h3.display { font-size: clamp(1rem, 4.5vw, 1.3rem); }
   p.lead { font-size: 1rem; }
   blockquote.pull { font-size: 1.1rem; padding-left: 1rem; }
 
@@ -807,33 +807,35 @@ nav.main-nav { gap: 1.8rem; }
 }
 
 /* ── ARM ROWS (editorial numbered list) ── */
-.arm-rows { margin-top: 3.5rem; border-top: 1px solid var(--rule); }
+.arm-rows { margin-top: 3rem; border-top: 1px solid var(--rule); }
 .arm-row {
   display: grid;
-  grid-template-columns: 60px minmax(160px, 1fr) 2.5fr;
+  grid-template-columns: 56px 1fr;
   gap: 2rem;
-  padding: 2.5rem 0;
+  padding: 2.4rem 0;
   border-bottom: 1px solid var(--rule);
   align-items: start;
   transition: background 0.25s;
 }
-.arm-row:hover { background: var(--off-white); padding-left: 1.2rem; padding-right: 1.2rem; margin: 0 -1.2rem; }
+.arm-row:hover { background: var(--off-white); }
 .arm-index {
   font-family: 'Syne', sans-serif;
-  font-size: clamp(2.4rem, 4vw, 3.4rem);
+  font-size: clamp(1.4rem, 1.8vw, 1.8rem);
   font-weight: 800;
   color: var(--green);
-  opacity: 0.4;
-  line-height: 1;
+  opacity: 0.45;
+  line-height: 1.1;
+  padding-top: 0.1rem;
 }
-.arm-row h3.display { font-size: clamp(0.92rem, 1.3vw, 1.2rem); line-height: 1.3; }
-@media (max-width: 860px) {
-  .arm-row { grid-template-columns: 60px 1fr; }
-  .arm-row > div:last-child { display: none; }
+.arm-row h3.display {
+  font-size: clamp(1.1rem, 1.5vw, 1.4rem);
+  line-height: 1.25;
+  margin-bottom: 0.9rem;
 }
+.arm-row p { margin-top: 0; }
 @media (max-width: 540px) {
-  .arm-row { grid-template-columns: 50px 1fr; gap: 1.2rem; padding: 2rem 0; }
-  .arm-index { font-size: 2.4rem; }
+  .arm-row { grid-template-columns: 40px 1fr; gap: 1.2rem; padding: 1.8rem 0; }
+  .arm-index { font-size: 1.1rem; }
 }
 
 /* ── RESEARCH GRID & CARDS ── */
