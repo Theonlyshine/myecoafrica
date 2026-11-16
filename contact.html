@@ -1,21 +1,57 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <title>Contact — MyEcoAfrica</title>
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,500;0,9..144,600;1,9..144,500&family=Work+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="style.css">
+<meta name="description" content="Get in touch with MyEcoAfrica for research commissions, media projects, or GESLP partnership and sponsorship." />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;700;800&family=Inter:wght@300;400;500&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet" />
+<link rel="stylesheet" href="css/style.css" />
+<script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
+<style>
+  .contact-tabs { display:flex; border-bottom:1px solid var(--rule); margin-bottom:2rem; }
+  .contact-tab {
+    font-family:'Space Mono',monospace; font-size:0.7rem; letter-spacing:0.12em;
+    text-transform:uppercase; color:var(--ink-light); background:none; border:none;
+    border-bottom:2px solid transparent; padding:0.75rem 1.5rem 0.65rem;
+    cursor:pointer; transition:color 0.15s,border-color 0.15s; margin-bottom:-1px;
+  }
+  .contact-tab:hover { color:var(--ink); }
+  .contact-tab.active { color:var(--green); border-bottom-color:var(--green); }
+  .contact-panel[hidden] { display:none; }
+  .contact-panel .service-card { max-width:620px; }
+  .contact-form { display:flex; flex-direction:column; gap:1.2rem; margin-top:1.4rem; }
+  .contact-form label { font-family:'Space Mono',monospace; font-size:0.65rem; letter-spacing:0.1em; text-transform:uppercase; color:var(--ink-light); display:block; margin-bottom:0.3rem; }
+  .contact-form input,
+  .contact-form select,
+  .contact-form textarea { width:100%; padding:0.75rem 1rem; border:1px solid var(--rule); background:var(--white); font-family:'Inter',sans-serif; font-size:0.95rem; color:var(--ink); outline:none; border-radius:3px; transition:border-color 0.2s; }
+  .contact-form input:focus,
+  .contact-form select:focus,
+  .contact-form textarea:focus { border-color:var(--green); }
+  .contact-form textarea { min-height:140px; resize:vertical; }
+  .submit-btn { background:var(--green); color:var(--white); border:none; padding:1rem 1.8rem; font-family:'Space Mono',monospace; font-size:0.7rem; letter-spacing:0.1em; text-transform:uppercase; cursor:pointer; transition:background 0.2s; align-self:flex-start; border-radius:3px; }
+  .submit-btn:hover { background:var(--green-dark); }
+</style>
 </head>
 <body>
+
+<div class="announce-bar">
+  <span>GESLP 2026 is now active across West Africa — <a href="programs.html">Learn more →</a></span>
+</div>
+
+<div class="marquee-band" aria-hidden="true">
+  <div class="marquee-track">
+    <span>MyEcoAfrica</span><span class="accent"> · </span><span>Sustainability Intelligence</span><span class="accent"> · </span><span>West Africa</span><span class="accent"> · </span><span>Research</span><span class="accent"> · </span><span>Media</span><span class="accent"> · </span><span>Education</span><span class="accent"> · </span><span>GESLP</span><span class="accent"> · </span><span>1 Million Africans</span><span class="accent"> · </span><span>Free for Every School</span><span class="accent"> · </span>
+    <span>MyEcoAfrica</span><span class="accent"> · </span><span>Sustainability Intelligence</span><span class="accent"> · </span><span>West Africa</span><span class="accent"> · </span><span>Research</span><span class="accent"> · </span><span>Media</span><span class="accent"> · </span><span>Education</span><span class="accent"> · </span><span>GESLP</span><span class="accent"> · </span><span>1 Million Africans</span><span class="accent"> · </span><span>Free for Every School</span><span class="accent"> · </span>
+  </div>
+</div>
 
 <header class="site-header">
   <div class="nav-inner">
     <a href="index.html" class="logo">MY<span>ECO</span>AFRICA</a>
     <nav class="main-nav" id="mainNav">
-      <a href="index.html" class="nav-logo">MY<span>ECO</span>AFRICA</a>
       <a href="index.html">Home</a>
       <a href="about.html">About</a>
       <a href="what-we-do.html">What We Do</a>
@@ -23,56 +59,18 @@
       <a href="programs.html">Programs</a>
       <a href="newsletter.html">Newsletter</a>
       <a href="contact.html" class="active">Contact</a>
-      <a href="contact.html" class="nav-cta-mobile">Work With Us</a>
     </nav>
     <a href="contact.html" class="nav-cta">Work With Us</a>
-    <button class="menu-btn" aria-label="Menu">☰</button>
-  </nav>
+    <button class="nav-toggle" id="navToggle" aria-label="Toggle menu">☰</button>
+  </div>
 </header>
 
-<section id="contact" class="contact">
-  <div class="wrap">
-    <div class="contact-grid">
-      <div class="contact-copy reveal">
-        <div class="kicker">Contact</div>
-        <h2>Tell us what you need.</h2>
-        <p>For every engagement we take on, we commit to delivering it well. Every enquiry is read and responded to within 48 hours.</p>
-        <div class="contact-cards">
-          <div class="ccard">
-            <div><div class="k">General enquiries</div><div class="v">hello@myecoafrica.org</div></div>
-            <a href="mailto:hello@myecoafrica.org" class="btn btn-ghost">Email</a>
-          </div>
-          <div class="ccard">
-            <div><div class="k">Partnerships &amp; commissions</div><div class="v">partnerships@myecoafrica.org</div></div>
-            <a href="mailto:partnerships@myecoafrica.org" class="btn btn-ghost">Email</a>
-          </div>
-          <div class="ccard">
-            <div><div class="k">Phone</div><div class="v">0806 535 0220</div></div>
-            <a href="tel:+2348065350220" class="btn btn-ghost">Call</a>
-          </div>
-        </div>
-        <div class="social-row">
-          <a href="https://instagram.com/myecoafrica.co">Instagram</a>
-          <a href="https://linkedin.com/company/myecoafrica">LinkedIn</a>
-          <a href="https://x.com/myecoafrica">X</a>
-        </div>
-      </div>
-      <form class="form-box reveal" onsubmit="event.preventDefault(); this.querySelector('button').textContent='Sent — thank you';">
-        <label for="name">Full name</label>
-        <input id="name" type="text" required>
-        <label for="org">Organisation</label>
-        <input id="org" type="text">
-        <label for="reason">What do you need?</label>
-        <select id="reason">
-          <option>Commission a report</option>
-          <option>Book a media project</option>
-          <option>Sponsor a school, state or project</option>
-          <option>Something else</option>
-        </select>
-        <label for="msg">Message</label>
-        <textarea id="msg" required></textarea>
-        <button type="submit">Send message</button>
-      </form>
+<main>
+  <div class="page-header">
+    <div class="container">
+      <span class="eyebrow">Contact</span>
+      <h1 class="display">Tell us what you need. We'll tell you if we're the right fit.</h1>
+      <p class="lead" style="max-width:640px;margin-top:1.2rem;">For every engagement we take, we commit to delivering it well. Every enquiry is read and responded to within 48 hours.</p>
     </div>
   </div>
 
@@ -126,7 +124,7 @@
 
       <div class="contact-panel" id="panel-geslp" role="tabpanel" aria-labelledby="tab-geslp" hidden>
         <div class="service-card">
-          <h3 class="display">GESLP</h3>
+          <h3 class="display">GESLP — Schools &amp; Sponsors</h3>
           <form class="contact-form" name="geslp-enquiry" method="POST" data-netlify="true" netlify-honeypot="bot-field">
             <input type="hidden" name="form-name" value="geslp-enquiry" />
             <p style="display:none;"><label>Don't fill this out: <input name="bot-field" /></label></p>
@@ -166,7 +164,6 @@
         </div>
       </div>
 
-
     </div>
   </section>
 </main>
@@ -188,21 +185,11 @@
       <div>
         <h4>Connect</h4>
         <div class="social-icons">
-          <a href="mailto:partnerwithmyecoafrica@gmail.com" class="social-icon" aria-label="Email" title="partnerwithmyecoafrica@gmail.com">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
-          </a>
-          <a href="tel:+2349077251354" class="social-icon" aria-label="Phone" title="+234 907 725 1354">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12 19.79 19.79 0 0 1 1.62 3.38 2 2 0 0 1 3.6 1.27h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.91 9a16 16 0 0 0 6 6l1.27-.95a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
-          </a>
-          <a href="https://instagram.com/myecoafrica.co" class="social-icon" aria-label="Instagram" title="@myecoafrica.co" target="_blank" rel="noopener noreferrer">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>
-          </a>
-          <a href="https://linkedin.com/company/myecoafrica" class="social-icon" aria-label="LinkedIn" title="myecoafrica on LinkedIn" target="_blank" rel="noopener noreferrer">
-            <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg>
-          </a>
-          <a href="https://x.com/myecoafrica" class="social-icon" aria-label="X (Twitter)" title="@myecoafrica on X" target="_blank" rel="noopener noreferrer">
-            <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
-          </a>
+          <a href="mailto:partnerwithmyecoafrica@gmail.com" class="social-icon" aria-label="Email"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg></a>
+          <a href="tel:+2349077251354" class="social-icon" aria-label="Phone"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12 19.79 19.79 0 0 1 1.62 3.38 2 2 0 0 1 3.6 1.27h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.91 9a16 16 0 0 0 6 6l1.27-.95a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg></a>
+          <a href="https://instagram.com/myecoafrica.co" class="social-icon" aria-label="Instagram" target="_blank" rel="noopener noreferrer"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg></a>
+          <a href="https://linkedin.com/company/myecoafrica" class="social-icon" aria-label="LinkedIn" target="_blank" rel="noopener noreferrer"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg></a>
+          <a href="https://x.com/myecoafrica" class="social-icon" aria-label="X" target="_blank" rel="noopener noreferrer"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg></a>
         </div>
       </div>
     </div>
@@ -210,10 +197,27 @@
       <span>© 2026 MyEcoAfrica. All rights reserved.</span>
       <span>myecoafrica.org</span>
     </div>
-    <div class="foot-copy">© 2026 MyEcoAfrica. All rights reserved. myecoafrica.org</div>
   </div>
 </footer>
 
-<script src="script.js"></script>
+<script src="js/main.js"></script>
+<script>
+  (function(){
+    var tabs=document.querySelectorAll('.contact-tab');
+    var panels=document.querySelectorAll('.contact-panel');
+    tabs.forEach(function(tab){
+      tab.addEventListener('click',function(){
+        tabs.forEach(function(t){t.classList.remove('active');t.setAttribute('aria-selected','false');});
+        panels.forEach(function(p){p.setAttribute('hidden','');});
+        tab.classList.add('active');
+        tab.setAttribute('aria-selected','true');
+        document.getElementById(tab.getAttribute('aria-controls')).removeAttribute('hidden');
+      });
+    });
+  })();
+</script>
+<script>
+  if(window.netlifyIdentity){window.netlifyIdentity.on('init',function(u){if(!u){window.netlifyIdentity.on('login',function(){document.location.href='/admin/';});}});}
+</script>
 </body>
 </html>
