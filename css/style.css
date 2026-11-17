@@ -29,6 +29,7 @@ body {
   font-size: 0.88rem;
   line-height: 1.9;
   overflow-x: hidden;
+  overscroll-behavior-x: none;
 }
 
 /* ── TYPOGRAPHY ── */
@@ -748,10 +749,10 @@ a:focus-visible, button:focus-visible, input:focus-visible, select:focus-visible
   .page-header { padding: 2.2rem 0 1.6rem; }
 
   /* Typography */
-  h1.display { font-size: clamp(2rem, 10vw, 3rem); }
-  h2.display { font-size: clamp(1.5rem, 7vw, 2.2rem); }
-  h3.display { font-size: clamp(1.1rem, 4.5vw, 1.4rem); }
-  p.lead { font-size: 1rem; }
+  h1.display { font-size: clamp(1.5rem, 7.5vw, 2.2rem); }
+  h2.display { font-size: clamp(1.3rem, 6vw, 2rem); }
+  h3.display { font-size: clamp(1rem, 4vw, 1.3rem); }
+  p.lead { font-size: 0.95rem; }
   blockquote.pull { font-size: 1.1rem; padding-left: 1rem; }
 
   /* Grids */
@@ -766,11 +767,11 @@ a:focus-visible, button:focus-visible, input:focus-visible, select:focus-visible
   /* Map stats: single column */
   .map-stats { grid-template-columns: 1fr; }
 
-  /* Buttons: stack and fill width in hero */
-  .hero .btn-row { flex-direction: column; align-items: stretch; }
-  .hero .btn-row .btn { text-align: center; }
-  .cta-band .btn-row { flex-direction: column; align-items: center; }
-  .cta-band .btn-row .btn { min-width: 240px; text-align: center; }
+  /* Buttons: stack neatly, auto-width — no slab stretch */
+  .btn-row { flex-wrap: wrap; gap: 0.75rem; }
+  .hero .btn-row { flex-direction: column; align-items: flex-start; gap: 0.65rem; }
+  .cta-band .btn-row { flex-direction: column; align-items: center; gap: 0.65rem; }
+  .cta-band .btn-row .btn { min-width: 220px; text-align: center; }
 
   /* Footer bottom */
   .footer-bottom { flex-direction: column; gap: 0.3rem; }
@@ -787,7 +788,7 @@ a:focus-visible, button:focus-visible, input:focus-visible, select:focus-visible
 /* ── MARQUEE BAND ── */
 .marquee-band {
   background: var(--ink);
-  overflow: hidden;
+  overflow: clip;
   padding: 0.55rem 0;
   user-select: none;
 }
@@ -854,7 +855,8 @@ nav.main-nav { gap: 1.8rem; }
 .hero-map-wrap { display: flex; align-items: center; justify-content: center; }
 .hero-map-wrap svg { width: 100%; max-width: 380px; opacity: 0.92; }
 @media (max-width: 860px) {
-  .hero-inner { grid-template-columns: 1fr; }
+  .hero-inner { grid-template-columns: minmax(0, 1fr); }
+  .hero-inner > * { min-width: 0; }
   .hero-map-wrap { display: none; }
 }
 
