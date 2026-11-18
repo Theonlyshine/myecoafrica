@@ -749,7 +749,7 @@ a:focus-visible, button:focus-visible, input:focus-visible, select:focus-visible
   .page-header { padding: 2.2rem 0 1.6rem; }
 
   /* Typography */
-  h1.display { font-size: clamp(1.5rem, 7.5vw, 2.2rem); }
+  h1.display { font-size: clamp(1.3rem, 5.8vw, 2.2rem); overflow-wrap: break-word; }
   h2.display { font-size: clamp(1.3rem, 6vw, 2rem); }
   h3.display { font-size: clamp(1rem, 4vw, 1.3rem); }
   p.lead { font-size: 0.95rem; }
