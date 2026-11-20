@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Research Brief — MyEcoAfrica</title>
+<meta name="description" content="Research brief from MyEcoAfrica." />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Syne:wght@700;800&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet" />
+<link rel="stylesheet" href="css/style.css" />
+<script src="https://cdnjs.cloudflare.com/ajax/libs/marked/9.1.6/marked.min.js"></script>
+<style>
+  .article-header { background: var(--ink); border-bottom: 1px solid rgba(255,255,255,0.08); padding: 3rem 0 2.5rem; }
+  .article-header .back-link { display: inline-block; font-family: 'Space Mono', monospace; font-size: 0.65rem; letter-spacing: 0.1em; text-transform: uppercase; color: var(--green); text-decoration: none; margin-bottom: 1.4rem; }
+  .article-header .back-link:hover { opacity: 0.75; }
+  .article-header .eyebrow { display: block; margin-bottom: 0.9rem; }
+  .article-header h1 { color: var(--white); font-size: clamp(1.6rem, 4vw, 2.8rem); line-height: 1.1; }
+  .article-meta { margin-top: 1rem; font-family: 'Space Mono', monospace; font-size: 0.65rem; letter-spacing: 0.08em; text-transform: uppercase; color: rgba(255,255,255,0.45); }
+  .article-summary { margin-top: 1.2rem; font-size: 1rem; color: rgba(255,255,255,0.65); line-height: 1.8; max-width: 680px; }
+
+  .article-body { max-width: 720px; padding-top: 3rem; padding-bottom: 4rem; }
+  .article-body p { font-size: 0.95rem; line-height: 1.95; color: var(--ink-mid); margin-bottom: 1.4rem; }
+  .article-body h2 { font-family: 'Syne', sans-serif; font-weight: 800; font-size: clamp(1.2rem, 2.5vw, 1.6rem); color: var(--ink); margin: 2.5rem 0 0.8rem; letter-spacing: 0.01em; text-transform: uppercase; }
+  .article-body h3 { font-family: 'Syne', sans-serif; font-weight: 700; font-size: 1rem; color: var(--ink); margin: 2rem 0 0.6rem; text-transform: uppercase; letter-spacing: 0.05em; }
+  .article-body strong { font-weight: 700; color: var(--ink); }
+  .article-body em { font-style: italic; }
+  .article-body a { color: var(--green); text-decoration: underline; text-decoration-color: rgba(29,167,96,0.4); text-underline-offset: 3px; }
+  .article-body a:hover { text-decoration-color: var(--green); }
+  .article-body hr { border: none; border-top: 1px solid var(--rule); margin: 2.5rem 0; }
+  .article-body blockquote { border-left: 3px solid var(--green); padding-left: 1.2rem; margin: 1.8rem 0; }
+  .article-body blockquote p { color: var(--ink-light); font-style: italic; }
+  .article-body ul, .article-body ol { padding-left: 1.4rem; margin-bottom: 1.4rem; }
+  .article-body li { font-size: 0.95rem; line-height: 1.8; color: var(--ink-mid); margin-bottom: 0.4rem; }
+
+  .article-loading { padding: 5rem 0; text-align: center; font-family: 'Space Mono', monospace; font-size: 0.65rem; letter-spacing: 0.12em; text-transform: uppercase; color: var(--ink-light); }
+</style>
+</head>
+<body>
+
+<div class="announce-bar">
+  <span>GESLP 2026 is now active across West Africa — <a href="programs.html">Learn more →</a></span>
+</div>
+
+<div class="marquee-band" aria-hidden="true">
+  <div class="marquee-track">
+    <span>MyEcoAfrica</span><span class="accent"> · </span><span>Sustainability Intelligence</span><span class="accent"> · </span><span>West Africa</span><span class="accent"> · </span><span>Research</span><span class="accent"> · </span><span>Media</span><span class="accent"> · </span><span>Education</span><span class="accent"> · </span><span>GESLP</span><span class="accent"> · </span><span>1 Million Africans</span><span class="accent"> · </span><span>Free for Every School</span><span class="accent"> · </span>
+    <span>MyEcoAfrica</span><span class="accent"> · </span><span>Sustainability Intelligence</span><span class="accent"> · </span><span>West Africa</span><span class="accent"> · </span><span>Research</span><span class="accent"> · </span><span>Media</span><span class="accent"> · </span><span>Education</span><span class="accent"> · </span><span>GESLP</span><span class="accent"> · </span><span>1 Million Africans</span><span class="accent"> · </span><span>Free for Every School</span><span class="accent"> · </span>
+  </div>
+</div>
+
+<header class="site-header">
+  <div class="nav-inner">
+    <a href="index.html" class="logo">MY<span>ECO</span>AFRICA</a>
+    <nav class="main-nav" id="mainNav">
+      <a href="index.html" class="nav-logo">MY<span>ECO</span>AFRICA</a>
+      <a href="index.html">Home</a>
+      <a href="about.html">About</a>
+      <a href="what-we-do.html">What We Do</a>
+      <a href="research.html" class="active">Research</a>
+      <a href="programs.html">Programs</a>
+      <a href="newsletter.html">Newsletter</a>
+      <a href="contact.html" class="nav-cta-mobile">Work With Us</a>
+    </nav>
+    <a href="contact.html" class="nav-cta">Work With Us</a>
+    <button class="nav-toggle" id="navToggle" aria-label="Toggle menu">☰</button>
+  </div>
+</header>
+
+<main>
+
+  <div class="article-header" id="articleHeader">
+    <div class="container">
+      <a href="research.html" class="back-link">← Back to Research</a>
+      <span class="eyebrow" id="articleTag">Research</span>
+      <h1 class="display" id="articleTitle">Loading&hellip;</h1>
+      <p class="article-meta" id="articleDate"></p>
+      <p class="article-summary" id="articleSummary"></p>
+    </div>
+  </div>
+
+  <section>
+    <div class="container article-body" id="articleBody">
+      <div class="article-loading">Loading brief&hellip;</div>
+    </div>
+  </section>
+
+  <section style="background:var(--off-white);border-top:1px solid var(--rule);">
+    <div class="container">
+      <div class="btn-row">
+        <a href="research.html" class="btn btn-ghost">← All Research</a>
+        <a href="contact.html" class="btn btn-primary">Commission Research →</a>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer class="site-footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div>
+        <h4>Pages</h4>
+        <div class="footer-pages">
+          <a href="about.html">About</a>
+          <a href="research.html">Research</a>
+          <a href="what-we-do.html">What We Do</a>
+          <a href="programs.html">Programs</a>
+          <a href="newsletter.html">Newsletter</a>
+          <a href="contact.html">Contact</a>
+        </div>
+      </div>
+      <div>
+        <h4>Connect</h4>
+        <div class="social-icons">
+          <a href="mailto:partnerwithmyecoafrica@gmail.com" class="social-icon" aria-label="Email"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg></a>
+          <a href="tel:+2349077251354" class="social-icon" aria-label="Phone"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12 19.79 19.79 0 0 1 1.62 3.38 2 2 0 0 1 3.6 1.27h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.91 9a16 16 0 0 0 6 6l1.27-.95a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg></a>
+          <a href="https://instagram.com/myecoafrica.co" class="social-icon" aria-label="Instagram" target="_blank" rel="noopener noreferrer"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg></a>
+          <a href="https://linkedin.com/company/myecoafrica" class="social-icon" aria-label="LinkedIn" target="_blank" rel="noopener noreferrer"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg></a>
+          <a href="https://x.com/myecoafrica" class="social-icon" aria-label="X" target="_blank" rel="noopener noreferrer"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg></a>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© 2026 MyEcoAfrica</span>
+      <span>myecoafrica.org</span>
+    </div>
+  </div>
+</footer>
+
+<script src="js/main.js"></script>
+<script>
+  if(window.netlifyIdentity){window.netlifyIdentity.on('init',function(u){if(!u){window.netlifyIdentity.on('login',function(){document.location.href='/admin/';});}});}
+
+  var REPO = 'Theonlyshine/myecoafrica', BRANCH = 'master';
+
+  function parseFrontmatter(text) {
+    var m = text.match(/^---\n([\s\S]*?)\n---/);
+    if (!m) return { body: text };
+    var r = {};
+    m[1].split('\n').forEach(function(l) {
+      var i = l.indexOf(':');
+      if (i === -1) return;
+      r[l.slice(0, i).trim()] = l.slice(i + 1).trim().replace(/^['"]|['"]$/g, '');
+    });
+    r.body = text.slice(m[0].length).trim();
+    return r;
+  }
+
+  async function loadArticle() {
+    var params = new URLSearchParams(window.location.search);
+    var slug = params.get('slug');
+    var body = document.getElementById('articleBody');
+
+    if (!slug) {
+      body.innerHTML = '<p style="color:var(--ink-light);">No article specified. <a href="research.html">Go back to Research.</a></p>';
+      return;
+    }
+
+    try {
+      var res = await fetch('https://api.github.com/repos/' + REPO + '/contents/content/blog/' + slug + '.md?ref=' + BRANCH);
+      if (!res.ok) throw new Error('not found');
+      var file = await res.json();
+      var raw = await fetch(file.download_url);
+      var text = await raw.text();
+      var data = parseFrontmatter(text);
+
+      document.title = (data.title || 'Research Brief') + ' — MyEcoAfrica';
+      document.getElementById('articleTag').textContent = data.tag || 'Research';
+      document.getElementById('articleTitle').textContent = data.title || 'Research Brief';
+
+      if (data.date) {
+        var d = new Date(data.date);
+        document.getElementById('articleDate').textContent = d.toLocaleDateString('en-GB', { year: 'numeric', month: 'long' });
+      }
+
+      if (data.summary) {
+        document.getElementById('articleSummary').textContent = data.summary;
+      }
+
+      if (data.body) {
+        body.innerHTML = marked.parse(data.body);
+      } else {
+        body.innerHTML = '<p style="color:var(--ink-light);">Full brief coming soon.</p>';
+      }
+
+    } catch(err) {
+      body.innerHTML = '<p style="color:var(--ink-light);">This brief could not be loaded. <a href="research.html">Go back to Research.</a></p>';
+    }
+  }
+
+  loadArticle();
+</script>
+</body>
+</html>
