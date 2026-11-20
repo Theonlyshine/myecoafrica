@@ -101,7 +101,7 @@ header.site-header {
 /* Hidden on desktop, shown inside mobile nav drawer */
 .nav-logo { display: none; }
 
-nav.main-nav { display: flex; gap: 2.2rem; }
+nav.main-nav { display: flex; gap: 2.2rem; align-items: center; }
 nav.main-nav a {
   font-family: 'Space Mono', monospace;
   font-size: 0.68rem;
@@ -113,6 +113,51 @@ nav.main-nav a {
 }
 nav.main-nav a:hover,
 nav.main-nav a.active { color: var(--green); }
+
+/* ── DROPDOWN NAV ── */
+.nav-item {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+.nav-item > a {
+  display: flex;
+  align-items: center;
+  gap: 0.25rem;
+}
+.dd-caret {
+  font-size: 0.5rem;
+  transition: transform 0.2s;
+  opacity: 0.6;
+}
+.nav-item:hover .dd-caret { transform: rotate(180deg); }
+.dd-menu {
+  display: none;
+  position: absolute;
+  top: calc(100% + 0.75rem);
+  left: 50%;
+  transform: translateX(-50%);
+  background: var(--white);
+  border: 1px solid var(--rule);
+  box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+  min-width: 180px;
+  z-index: 150;
+  padding: 0.4rem 0;
+}
+.nav-item:hover .dd-menu { display: block; }
+.dd-menu a {
+  display: block;
+  font-family: 'Space Mono', monospace;
+  font-size: 0.62rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--ink-mid);
+  text-decoration: none;
+  padding: 0.5rem 1.1rem;
+  white-space: nowrap;
+  transition: color 0.15s, background 0.15s;
+}
+.dd-menu a:hover { color: var(--green); background: var(--off-white); }
 
 .nav-cta {
   font-family: 'Space Mono', monospace;
@@ -203,6 +248,47 @@ nav.main-nav .nav-cta-mobile { display: none; }
     width: 100%;
     text-align: center;
   }
+
+  /* Mobile dropdowns inline in the drawer */
+  .nav-item {
+    flex-direction: column;
+    align-items: center;
+    gap: 0;
+  }
+  .nav-item > a {
+    font-family: 'Syne', sans-serif;
+    font-size: clamp(0.9rem, 3.5vw, 1.1rem);
+    font-weight: 800;
+    letter-spacing: -0.01em;
+    color: rgba(255,255,255,0.75);
+  }
+  .nav-item > a:hover, .nav-item > a.active { color: var(--green); }
+  .dd-caret { opacity: 0.5; }
+  .dd-menu {
+    position: static;
+    transform: none;
+    left: auto;
+    top: auto;
+    background: transparent;
+    border: none;
+    box-shadow: none;
+    display: none;
+    padding: 0.4rem 0 0;
+    text-align: center;
+    min-width: 0;
+  }
+  .nav-item.mob-open .dd-menu { display: block; }
+  .nav-item:hover .dd-menu { display: none; }
+  .nav-item.mob-open .dd-menu { display: block; }
+  .dd-menu a {
+    font-family: 'Space Mono', monospace;
+    font-size: 0.65rem;
+    color: rgba(255,255,255,0.45);
+    padding: 0.3rem 0;
+    display: block;
+    background: transparent;
+  }
+  .dd-menu a:hover { color: var(--green); background: transparent; }
 }
 
 /* ── BUTTONS ── */

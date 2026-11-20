@@ -47,8 +47,8 @@
       <a href="index.html">Home</a>
       <a href="about.html">About</a>
       <a href="what-we-do.html">What We Do</a>
-      <a href="research.html">Research</a>
-      <a href="programs.html">Programs</a>
+      <div class="nav-item has-dropdown"><a href="research.html">Research <span class="dd-caret" aria-hidden="true">▾</span></a><div class="dd-menu"><a href="research.html">Browse All</a><a href="contact.html">Commission a Brief</a></div></div>
+      <div class="nav-item has-dropdown"><a href="programs.html">Programs <span class="dd-caret" aria-hidden="true">▾</span></a><div class="dd-menu"><a href="programs.html">GESLP Overview</a><a href="gallery.html">Visual Archive</a><a href="contact.html">Sponsor a Cohort</a></div></div>
       <a href="newsletter.html">Newsletter</a>
       <a href="contact.html" class="active">Contact</a>
     </nav>
@@ -84,8 +84,8 @@
           Fund a cohort, sponsor a school, or co-deploy the programme at scale.
         </button>
       </div>
-      <div id="audienceContext" style="margin-top:1.4rem;font-family:'Space Mono',monospace;font-size:0.72rem;line-height:1.85;color:var(--ink-mid);max-width:620px;padding:1.2rem 1.4rem;border:1px solid var(--rule);background:var(--white);">
-        For DFI officers, corporate ESG teams, and government agencies: we commission research, produce advisory briefs, and develop media for institutions that need honest intelligence about Africa's sustainability transition. All enquiries include a 48-hour response from the team.
+      <div id="audienceContext" style="margin-top:1.4rem;font-family:'Space Mono',monospace;font-size:0.68rem;line-height:1.75;color:var(--ink-mid);max-width:580px;padding:1rem 1.2rem;border:1px solid var(--rule);background:var(--white);">
+        Research commissions, advisory briefs, and media for institutions. 48-hour response.
       </div>
     </div>
   </section>
@@ -160,9 +160,9 @@
         <h4>Pages</h4>
         <div class="footer-pages">
           <a href="about.html">About</a>
-          <a href="research.html">Research</a>
+          <div class="nav-item has-dropdown"><a href="research.html">Research <span class="dd-caret" aria-hidden="true">▾</span></a><div class="dd-menu"><a href="research.html">Browse All</a><a href="contact.html">Commission a Brief</a></div></div>
           <a href="what-we-do.html">What We Do</a>
-          <a href="programs.html">Programs</a>
+          <div class="nav-item has-dropdown"><a href="programs.html">Programs <span class="dd-caret" aria-hidden="true">▾</span></a><div class="dd-menu"><a href="programs.html">GESLP Overview</a><a href="gallery.html">Visual Archive</a><a href="contact.html">Sponsor a Cohort</a></div></div>
           <a href="newsletter.html">Newsletter</a>
           <a href="contact.html">Contact</a>
         </div>
@@ -188,9 +188,9 @@
 <script src="js/main.js"></script>
 <script>
   var audienceMessages = {
-    institutional: 'For DFI officers, corporate ESG teams, and government agencies: we commission research, produce advisory briefs, and develop media for institutions that need honest intelligence about Africa\'s sustainability transition. All enquiries include a 48-hour response from the team.',
-    schools: 'For secondary school administrators and educators: GESLP is free for every school and every student. We handle curriculum delivery, facilitator training, and assessment. Zero burden on school staff.',
-    sponsors: 'For corporate partners, foundations, and government entities: sponsoring a GESLP cohort puts your brand inside Africa\'s largest sustainability education programme for secondary schools. Tiered sponsorship structures available on request.'
+    institutional: 'Research commissions, advisory briefs, and media for institutions. 48-hour response.',
+    schools: 'GESLP is free for every school and student. We handle everything — curriculum, delivery, certificates.',
+    sponsors: 'Sponsor a cohort, a school, or the full programme. Tiered structures available on request.'
   };
   document.querySelectorAll('.audience-btn').forEach(function(btn) {
     btn.addEventListener('click', function() {
