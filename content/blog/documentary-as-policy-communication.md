@@ -1,5 +1,5 @@
 ---
-title: "Media Is Infrastructure: Why Africa's Sustainability Transition Needs a Story as Much as It Needs a Grid"
+title: "Why Africa's System Needs a Story"
 tag: "Media & Intelligence"
 date: "2026-02-28T00:00:00.000Z"
 summary: "Germany didn't just build the Energiewende. It narrated it. Denmark didn't just build wind turbines. It told the story of building wind turbines, for 20 years, until wind became synonymous with Denmark globally. Africa is building things. The world doesn't know about most of them. That gap is not a communications problem. It is a strategy problem."
