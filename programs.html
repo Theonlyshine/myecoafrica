@@ -10,6 +10,10 @@
 <link href="https://fonts.googleapis.com/css2?family=Syne:wght@700;800&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet" />
 <link rel="stylesheet" href="css/style.css" />
 <script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
+<style>
+  .pilot-cohort-grid { display:grid; grid-template-columns:repeat(2,1fr); gap:1.4rem; }
+  @media (max-width:640px) { .pilot-cohort-grid { grid-template-columns:1fr; } }
+</style>
 </head>
 <body>
 
@@ -17,12 +21,6 @@
   <span>GESLP 2026 is now active across West Africa — <a href="programs.html">Learn more →</a></span>
 </div>
 
-<div class="marquee-band" aria-hidden="true">
-  <div class="marquee-track">
-    <span>MyEcoAfrica</span><span class="accent"> · </span><span>GESLP</span><span class="accent"> · </span><span>Free for Every School</span><span class="accent"> · </span><span>1 Million Africans</span><span class="accent"> · </span><span>Sustainability Leadership</span><span class="accent"> · </span><span>Secondary Schools</span><span class="accent"> · </span><span>West Africa</span><span class="accent"> · </span><span>Equip the Next Generation</span><span class="accent"> · </span>
-    <span>MyEcoAfrica</span><span class="accent"> · </span><span>GESLP</span><span class="accent"> · </span><span>Free for Every School</span><span class="accent"> · </span><span>1 Million Africans</span><span class="accent"> · </span><span>Sustainability Leadership</span><span class="accent"> · </span><span>Secondary Schools</span><span class="accent"> · </span><span>West Africa</span><span class="accent"> · </span><span>Equip the Next Generation</span><span class="accent"> · </span>
-  </div>
-</div>
 
 <header class="site-header">
   <div class="nav-inner">
@@ -72,6 +70,48 @@
       <span class="section-label">Currently Running</span>
       <h2 class="display reveal">Two-Day Climate <em>Workshop</em></h2>
       <p class="lead reveal" style="max-width:700px;margin-top:1.2rem;">Delivered in secondary schools across West Africa. Sustainability literacy, leadership development, and a certificate of participation. Free for every school and every student.</p>
+    </div>
+  </section>
+
+  <!-- ── PILOT IMPACT ── -->
+  <section>
+    <div class="container">
+      <span class="section-label">Year One Results</span>
+      <h2 class="display reveal">Pilot impact &amp; <em>outcomes.</em></h2>
+      <p style="max-width:660px;margin-top:1.2rem;font-family:'Space Mono',monospace;font-size:0.78rem;line-height:1.9;color:var(--ink-mid);">GESLP launched its first full cohort year in May 2026. The numbers below represent completed data from Year One deployment across Nigeria.</p>
+      <div class="stat-row reveal" style="margin-top:2rem;">
+        <div class="stat-row-item">
+          <span class="stat-row-num">700+</span>
+          <span class="stat-row-label">Students trained across the first cohort year</span>
+        </div>
+        <div class="stat-row-item">
+          <span class="stat-row-num">7</span>
+          <span class="stat-row-label">Nigerian states reached in Year One deployment</span>
+        </div>
+        <div class="stat-row-item">
+          <span class="stat-row-num">₦0</span>
+          <span class="stat-row-label">Cost to any school or student in the programme</span>
+        </div>
+      </div>
+      <div class="pilot-cohort-grid reveal" style="margin-top:2rem;">
+        <div style="border:1px solid var(--rule);padding:1.4rem 1.6rem;">
+          <div style="font-family:'Space Mono',monospace;font-size:0.6rem;letter-spacing:0.12em;text-transform:uppercase;color:var(--green);margin-bottom:0.5rem;">Gombe State</div>
+          <p style="font-family:'Space Mono',monospace;font-size:0.7rem;line-height:1.75;color:var(--ink-mid);">Workshop delivery across secondary schools — both tracks completed, roundtables and Q&amp;A sessions, sustainability literacy certificates awarded.</p>
+        </div>
+        <div style="border:1px solid var(--rule);padding:1.4rem 1.6rem;">
+          <div style="font-family:'Space Mono',monospace;font-size:0.6rem;letter-spacing:0.12em;text-transform:uppercase;color:var(--green);margin-bottom:0.5rem;">Cross River State (Calabar)</div>
+          <p style="font-family:'Space Mono',monospace;font-size:0.7rem;line-height:1.75;color:var(--ink-mid);">GESLP deployed across Calabar — full 2-day programme, student presentations, and certificate ceremony completed.</p>
+        </div>
+        <div style="border:1px solid var(--rule);padding:1.4rem 1.6rem;">
+          <div style="font-family:'Space Mono',monospace;font-size:0.6rem;letter-spacing:0.12em;text-transform:uppercase;color:var(--green);margin-bottom:0.5rem;">FCT Abuja</div>
+          <p style="font-family:'Space Mono',monospace;font-size:0.7rem;line-height:1.75;color:var(--ink-mid);">Deployment in Federal Capital Territory schools with institutional partner visits. Programme fully completed and documented.</p>
+        </div>
+        <div style="border:1px solid var(--rule);padding:1.4rem 1.6rem;background:var(--off-white);">
+          <div style="font-family:'Space Mono',monospace;font-size:0.6rem;letter-spacing:0.12em;text-transform:uppercase;color:var(--green);margin-bottom:0.5rem;">Year Two Targets</div>
+          <p style="font-family:'Space Mono',monospace;font-size:0.7rem;line-height:1.75;color:var(--ink-mid);">Expanding to additional states and introducing partnerships with development finance institutions and corporate ESG sponsors. <a href="contact.html" style="color:var(--green);">Partner with us →</a></p>
+        </div>
+      </div>
+      <p style="font-family:'Space Mono',monospace;font-size:0.65rem;color:var(--ink-light);line-height:1.8;margin-top:1.6rem;max-width:580px;">Full Year One field report with disaggregated outcome data will be published November 2026. <a href="article.html?slug=geslp-year-one-field-report" style="color:var(--green);">Read the preview →</a></p>
     </div>
   </section>
 
@@ -199,7 +239,7 @@
       <div>
         <h4>Connect</h4>
         <div class="social-icons">
-          <a href="mailto:partnerwithmyecoafrica@gmail.com" class="social-icon" aria-label="Email"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg></a>
+          <a href="mailto:hello@myecoafrica.org" class="social-icon" aria-label="Email"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg></a>
           <a href="tel:+2349077251354" class="social-icon" aria-label="Phone"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12 19.79 19.79 0 0 1 1.62 3.38 2 2 0 0 1 3.6 1.27h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.91 9a16 16 0 0 0 6 6l1.27-.95a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg></a>
           <a href="https://instagram.com/myecoafrica.co" class="social-icon" aria-label="Instagram" target="_blank" rel="noopener noreferrer"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg></a>
           <a href="https://linkedin.com/company/myecoafrica" class="social-icon" aria-label="LinkedIn" target="_blank" rel="noopener noreferrer"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg></a>

@@ -2,11 +2,326 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8" />
-<meta http-equiv="refresh" content="0; url=programs.html" />
-<title>Redirecting — MyEcoAfrica</title>
-<link rel="canonical" href="programs.html" />
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+<title>Gallery — MyEcoAfrica</title>
+<meta name="description" content="Visual archive of GESLP cohort deployments across West Africa — photography and documentation from the field." />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Syne:wght@700;800&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet" />
+<link rel="stylesheet" href="css/style.css" />
+<script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
+<style>
+  .gallery-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 2rem;
+    margin-top: 2.5rem;
+  }
+  @media (max-width: 640px) { .gallery-grid { grid-template-columns: 1fr; gap: 1.4rem; } }
+
+  .cohort-card {
+    border: 1px solid var(--rule);
+    background: var(--white);
+  }
+  .cohort-card-thumb {
+    width: 100%;
+    aspect-ratio: 16 / 10;
+    background: var(--off-white);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-bottom: 1px solid var(--rule);
+    position: relative;
+    overflow: hidden;
+  }
+  .cohort-card-thumb img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+  }
+  .cohort-card-thumb-placeholder {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 0.6rem;
+    width: 100%;
+    height: 100%;
+  }
+  .cohort-card-thumb-placeholder svg {
+    opacity: 0.18;
+    width: 2.5rem;
+    height: 2.5rem;
+  }
+  .cohort-card-thumb-placeholder span {
+    font-family: 'Space Mono', monospace;
+    font-size: 0.6rem;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--ink-light);
+  }
+  .cohort-card-meta {
+    padding: 1.4rem 1.6rem 1.6rem;
+  }
+  .cohort-card-label {
+    font-family: 'Space Mono', monospace;
+    font-size: 0.58rem;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--green);
+    display: block;
+    margin-bottom: 0.5rem;
+  }
+  .cohort-card-title {
+    font-family: 'Syne', sans-serif;
+    font-weight: 800;
+    font-size: 1rem;
+    color: var(--ink);
+    line-height: 1.25;
+    margin-bottom: 0.6rem;
+  }
+  .cohort-card-details {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem 1.2rem;
+    margin-top: 0.8rem;
+  }
+  .cohort-card-detail {
+    font-family: 'Space Mono', monospace;
+    font-size: 0.6rem;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--ink-light);
+  }
+  .cohort-card-detail strong {
+    color: var(--ink-mid);
+    font-weight: 700;
+  }
+  .cohort-soon {
+    display: inline-block;
+    margin-top: 0.8rem;
+    font-family: 'Space Mono', monospace;
+    font-size: 0.58rem;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--ink-light);
+    background: var(--off-white);
+    border: 1px solid var(--rule);
+    padding: 0.3rem 0.7rem;
+  }
+
+  .gallery-filter-row {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    margin-top: 1.8rem;
+    align-items: center;
+  }
+
+  .archive-note {
+    font-family: 'Space Mono', monospace;
+    font-size: 0.72rem;
+    color: var(--ink-light);
+    line-height: 1.8;
+    max-width: 620px;
+    margin-top: 2.5rem;
+    padding-top: 2rem;
+    border-top: 1px solid var(--rule);
+  }
+</style>
 </head>
 <body>
-<p>This page has moved. <a href="programs.html">Go to Programs →</a></p>
+
+<div class="announce-bar">
+  <span>GESLP 2026 is now active across West Africa — <a href="programs.html">Learn more →</a></span>
+</div>
+
+<header class="site-header">
+  <div class="nav-inner">
+    <a href="index.html" class="logo">MY<span>ECO</span>AFRICA</a>
+    <nav class="main-nav" id="mainNav">
+      <a href="index.html" class="nav-logo">MY<span>ECO</span>AFRICA</a>
+      <a href="index.html">Home</a>
+      <a href="about.html">About</a>
+      <a href="what-we-do.html">What We Do</a>
+      <a href="research.html">Research</a>
+      <a href="programs.html">Programs</a>
+      <a href="newsletter.html">Newsletter</a>
+      <a href="contact.html" class="nav-cta-mobile">Work With Us</a>
+    </nav>
+    <a href="contact.html" class="nav-cta">Work With Us</a>
+    <button class="nav-toggle" id="navToggle" aria-label="Toggle menu">☰</button>
+  </div>
+</header>
+
+<main>
+
+  <div class="page-header">
+    <div class="container">
+      <span class="eyebrow">Visual Archive</span>
+      <h1 class="display">Field<br>documentation.</h1>
+      <p class="lead" style="max-width:640px;margin-top:1.4rem;">Photography and video documentation from GESLP cohort deployments across West Africa. Every school visit, every cohort, on record.</p>
+    </div>
+  </div>
+
+  <section>
+    <div class="container">
+
+      <div class="gallery-filter-row">
+        <button class="research-filter-btn active" data-state="all">All Visits</button>
+        <button class="research-filter-btn" data-state="gombe">Gombe</button>
+        <button class="research-filter-btn" data-state="calabar">Calabar</button>
+        <button class="research-filter-btn" data-state="abuja">Abuja</button>
+      </div>
+
+      <div class="gallery-grid" id="galleryGrid">
+
+        <!-- GOMBE VISIT -->
+        <div class="cohort-card reveal" data-state="gombe">
+          <div class="cohort-card-thumb">
+            <div class="cohort-card-thumb-placeholder">
+              <svg viewBox="0 0 24 24" fill="none" stroke="var(--ink)" stroke-width="1.5" xmlns="http://www.w3.org/2000/svg"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/></svg>
+              <span>Photos uploading</span>
+            </div>
+          </div>
+          <div class="cohort-card-meta">
+            <span class="cohort-card-label">GESLP Deployment · 2026</span>
+            <div class="cohort-card-title">Gombe State Visit</div>
+            <p style="font-family:'Space Mono',monospace;font-size:0.7rem;line-height:1.75;color:var(--ink-mid);margin-top:0.5rem;">Workshop delivery across secondary schools in Gombe State — Track 1 (Solutions) and Track 2 (Advocacy) sessions, roundtables, and sustainability literacy assessments.</p>
+            <div class="cohort-card-details">
+              <div class="cohort-card-detail"><strong>Location</strong> Gombe, Gombe State</div>
+              <div class="cohort-card-detail"><strong>Region</strong> North-East Nigeria</div>
+              <div class="cohort-card-detail"><strong>Year</strong> 2026</div>
+              <div class="cohort-card-detail"><strong>Programme</strong> GESLP Year One</div>
+            </div>
+            <span class="cohort-soon">Full photo set coming soon</span>
+          </div>
+        </div>
+
+        <!-- CALABAR VISIT -->
+        <div class="cohort-card reveal" data-state="calabar">
+          <div class="cohort-card-thumb">
+            <div class="cohort-card-thumb-placeholder">
+              <svg viewBox="0 0 24 24" fill="none" stroke="var(--ink)" stroke-width="1.5" xmlns="http://www.w3.org/2000/svg"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/></svg>
+              <span>Photos uploading</span>
+            </div>
+          </div>
+          <div class="cohort-card-meta">
+            <span class="cohort-card-label">GESLP Deployment · 2026</span>
+            <div class="cohort-card-title">Calabar Visit</div>
+            <p style="font-family:'Space Mono',monospace;font-size:0.7rem;line-height:1.75;color:var(--ink-mid);margin-top:0.5rem;">GESLP deployment in Cross River State — 2-day workshop across cohort schools, student Q&amp;A sessions, and sustainability literacy certificate presentations.</p>
+            <div class="cohort-card-details">
+              <div class="cohort-card-detail"><strong>Location</strong> Calabar, Cross River State</div>
+              <div class="cohort-card-detail"><strong>Region</strong> South-South Nigeria</div>
+              <div class="cohort-card-detail"><strong>Year</strong> 2026</div>
+              <div class="cohort-card-detail"><strong>Programme</strong> GESLP Year One</div>
+            </div>
+            <span class="cohort-soon">Full photo set coming soon</span>
+          </div>
+        </div>
+
+        <!-- ABUJA VISIT -->
+        <div class="cohort-card reveal" data-state="abuja">
+          <div class="cohort-card-thumb">
+            <div class="cohort-card-thumb-placeholder">
+              <svg viewBox="0 0 24 24" fill="none" stroke="var(--ink)" stroke-width="1.5" xmlns="http://www.w3.org/2000/svg"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/></svg>
+              <span>Photos uploading</span>
+            </div>
+          </div>
+          <div class="cohort-card-meta">
+            <span class="cohort-card-label">GESLP Deployment · 2026</span>
+            <div class="cohort-card-title">Abuja Visit</div>
+            <p style="font-family:'Space Mono',monospace;font-size:0.7rem;line-height:1.75;color:var(--ink-mid);margin-top:0.5rem;">Federal Capital Territory deployment — institutional meetings, GESLP partner school visits, and documentation of the programme's expansion into the FCT corridor.</p>
+            <div class="cohort-card-details">
+              <div class="cohort-card-detail"><strong>Location</strong> Abuja, FCT</div>
+              <div class="cohort-card-detail"><strong>Region</strong> North-Central Nigeria</div>
+              <div class="cohort-card-detail"><strong>Year</strong> 2026</div>
+              <div class="cohort-card-detail"><strong>Programme</strong> GESLP Year One</div>
+            </div>
+            <span class="cohort-soon">Full photo set coming soon</span>
+          </div>
+        </div>
+
+      </div>
+
+      <p class="archive-note">
+        High-resolution photography from each deployment is processed and added to this archive on a rolling basis. All images are documented with location, date, and cohort details. For media use or licensing enquiries, contact <a href="mailto:hello@myecoafrica.org" style="color:var(--green);">hello@myecoafrica.org</a>.
+      </p>
+
+    </div>
+  </section>
+
+  <section class="cta-band">
+    <div class="container">
+      <span class="section-label">Partner With Us</span>
+      <h2 class="display reveal">Bring GESLP to your school or <em>sponsor a cohort.</em></h2>
+      <div class="btn-row reveal">
+        <a href="contact.html" class="btn btn-primary">Get in Touch →</a>
+        <a href="programs.html" class="btn btn-ghost">About GESLP</a>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer class="site-footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div>
+        <h4>Pages</h4>
+        <div class="footer-pages">
+          <a href="about.html">About</a>
+          <a href="research.html">Research</a>
+          <a href="what-we-do.html">What We Do</a>
+          <a href="programs.html">Programs</a>
+          <a href="newsletter.html">Newsletter</a>
+          <a href="contact.html">Contact</a>
+        </div>
+      </div>
+      <div>
+        <h4>Connect</h4>
+        <div class="social-icons">
+          <a href="mailto:hello@myecoafrica.org" class="social-icon" aria-label="Email" title="hello@myecoafrica.org"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg></a>
+          <a href="tel:+2340806535022" class="social-icon" aria-label="Phone" title="+234 0806 535 0220"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12 19.79 19.79 0 0 1 1.62 3.38 2 2 0 0 1 3.6 1.27h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.91 9a16 16 0 0 0 6 6l1.27-.95a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg></a>
+          <a href="https://instagram.com/myecoafrica.co" class="social-icon" aria-label="Instagram" title="@myecoafrica.co" target="_blank" rel="noopener noreferrer"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg></a>
+          <a href="https://linkedin.com/company/myecoafrica" class="social-icon" aria-label="LinkedIn" title="myecoafrica on LinkedIn" target="_blank" rel="noopener noreferrer"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg></a>
+          <a href="https://x.com/myecoafrica" class="social-icon" aria-label="X (Twitter)" title="@myecoafrica on X" target="_blank" rel="noopener noreferrer"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg></a>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© 2026 MyEcoAfrica</span>
+      <span>myecoafrica.org</span>
+    </div>
+  </div>
+</footer>
+
+<script src="js/main.js"></script>
+<script>
+  (function(){
+    var els=document.querySelectorAll('.reveal');
+    if(!els.length)return;
+    els.forEach(function(el,i){el.style.transitionDelay=(i*0.07)+'s';});
+    var io=new IntersectionObserver(function(entries){
+      entries.forEach(function(e){if(e.isIntersecting){e.target.classList.add('visible');io.unobserve(e.target);}});
+    },{threshold:0.1});
+    els.forEach(function(el){io.observe(el);});
+  })();
+
+  // Filter buttons
+  document.querySelectorAll('.gallery-filter-row .research-filter-btn').forEach(function(btn){
+    btn.addEventListener('click', function(){
+      document.querySelectorAll('.gallery-filter-row .research-filter-btn').forEach(function(b){ b.classList.remove('active'); });
+      btn.classList.add('active');
+      var state = btn.getAttribute('data-state');
+      document.querySelectorAll('.cohort-card').forEach(function(card){
+        card.style.display = (state === 'all' || card.getAttribute('data-state') === state) ? '' : 'none';
+      });
+    });
+  });
+
+  if(window.netlifyIdentity){window.netlifyIdentity.on('init',function(u){if(!u){window.netlifyIdentity.on('login',function(){document.location.href='/admin/';});}});}
+</script>
 </body>
 </html>

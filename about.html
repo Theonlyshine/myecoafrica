@@ -10,6 +10,14 @@
 <link href="https://fonts.googleapis.com/css2?family=Syne:wght@700;800&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet" />
 <link rel="stylesheet" href="css/style.css" />
 <script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
+<style>
+  .leadership-grid { display:grid; grid-template-columns:repeat(2,1fr); gap:2rem; margin-top:2.5rem; }
+  @media (max-width:640px) { .leadership-grid { grid-template-columns:1fr; gap:1.4rem; } }
+  .audience-paths { display:grid; grid-template-columns:repeat(3,1fr); gap:1.4rem; margin-top:1.8rem; }
+  @media (max-width:640px) { .audience-paths { grid-template-columns:1fr; } }
+  .contact-details { display:grid; grid-template-columns:repeat(3,1fr); gap:1.4rem; }
+  @media (max-width:640px) { .contact-details { grid-template-columns:1fr; gap:1rem; } }
+</style>
 </head>
 <body>
 
@@ -17,12 +25,6 @@
   <span>GESLP 2026 is now active across West Africa — <a href="programs.html">Learn more →</a></span>
 </div>
 
-<div class="marquee-band" aria-hidden="true">
-  <div class="marquee-track">
-    <span>MyEcoAfrica</span><span class="accent"> · </span><span>Sustainability Intelligence</span><span class="accent"> · </span><span>West Africa</span><span class="accent"> · </span><span>Research</span><span class="accent"> · </span><span>Media</span><span class="accent"> · </span><span>Education</span><span class="accent"> · </span><span>GESLP</span><span class="accent"> · </span><span>1 Million Africans</span><span class="accent"> · </span><span>Free for Every School</span><span class="accent"> · </span>
-    <span>MyEcoAfrica</span><span class="accent"> · </span><span>Sustainability Intelligence</span><span class="accent"> · </span><span>West Africa</span><span class="accent"> · </span><span>Research</span><span class="accent"> · </span><span>Media</span><span class="accent"> · </span><span>Education</span><span class="accent"> · </span><span>GESLP</span><span class="accent"> · </span><span>1 Million Africans</span><span class="accent"> · </span><span>Free for Every School</span><span class="accent"> · </span>
-  </div>
-</div>
 
 <header class="site-header">
   <div class="nav-inner">
@@ -129,6 +131,57 @@
     </div>
   </section>
 
+  <!-- ── LEADERSHIP ── -->
+  <section style="background:var(--off-white);border-top:1px solid var(--rule);border-bottom:1px solid var(--rule);">
+    <div class="container">
+      <span class="section-label">Leadership</span>
+      <h2 class="display reveal">The people behind <em>the work.</em></h2>
+      <div class="leadership-grid reveal">
+
+        <div style="background:var(--white);border:1px solid var(--rule);padding:2rem;">
+          <div style="font-family:'Space Mono',monospace;font-size:0.6rem;letter-spacing:0.14em;text-transform:uppercase;color:var(--green);margin-bottom:0.6rem;">Founder &amp; Director</div>
+          <h3 style="font-family:'Syne',sans-serif;font-weight:800;font-size:1.1rem;color:var(--ink);margin-bottom:0.5rem;">Olawale Adebayo</h3>
+          <p style="font-family:'Space Mono',monospace;font-size:0.72rem;line-height:1.85;color:var(--ink-mid);">Founder of MyEcoAfrica with a background in sustainability strategy, institutional development, and education programme design across West Africa. Responsible for the overall direction of the organisation, its research and media programmes, and the GESLP national rollout.</p>
+          <div style="margin-top:1rem;display:flex;flex-direction:column;gap:0.3rem;">
+            <span style="font-family:'Space Mono',monospace;font-size:0.6rem;color:var(--ink-light);letter-spacing:0.08em;text-transform:uppercase;">Focus: Strategy · Research · Education</span>
+          </div>
+        </div>
+
+        <div style="background:var(--white);border:1px solid var(--rule);padding:2rem;">
+          <div style="font-family:'Space Mono',monospace;font-size:0.6rem;letter-spacing:0.14em;text-transform:uppercase;color:var(--green);margin-bottom:0.6rem;">Head of Research</div>
+          <h3 style="font-family:'Syne',sans-serif;font-weight:800;font-size:1.1rem;color:var(--ink);margin-bottom:0.5rem;">Research Team</h3>
+          <p style="font-family:'Space Mono',monospace;font-size:0.72rem;line-height:1.85;color:var(--ink-mid);">MyEcoAfrica's research team brings together analysts with expertise in energy systems, governance, macroeconomics, and public policy. Research is produced for institutional clients — development finance institutions, corporates, and public agencies — and published openly where possible.</p>
+          <div style="margin-top:1rem;display:flex;flex-direction:column;gap:0.3rem;">
+            <span style="font-family:'Space Mono',monospace;font-size:0.6rem;color:var(--ink-light);letter-spacing:0.08em;text-transform:uppercase;">Focus: Policy · Energy · Macro Analysis</span>
+          </div>
+        </div>
+
+        <div style="background:var(--white);border:1px solid var(--rule);padding:2rem;">
+          <div style="font-family:'Space Mono',monospace;font-size:0.6rem;letter-spacing:0.14em;text-transform:uppercase;color:var(--green);margin-bottom:0.6rem;">Head of Media</div>
+          <h3 style="font-family:'Syne',sans-serif;font-weight:800;font-size:1.1rem;color:var(--ink);margin-bottom:0.5rem;">Media &amp; Communications Team</h3>
+          <p style="font-family:'Space Mono',monospace;font-size:0.72rem;line-height:1.85;color:var(--ink-mid);">Our media arm produces documentary content, editorial publishing, and strategic communications for institutions building in Africa's sustainability transition. The team operates on the conviction that the story is part of the work — not decoration on top of it.</p>
+          <div style="margin-top:1rem;display:flex;flex-direction:column;gap:0.3rem;">
+            <span style="font-family:'Space Mono',monospace;font-size:0.6rem;color:var(--ink-light);letter-spacing:0.08em;text-transform:uppercase;">Focus: Documentary · Editorial · Comms</span>
+          </div>
+        </div>
+
+        <div style="background:var(--white);border:1px solid var(--rule);padding:2rem;">
+          <div style="font-family:'Space Mono',monospace;font-size:0.6rem;letter-spacing:0.14em;text-transform:uppercase;color:var(--green);margin-bottom:0.6rem;">Head of Education</div>
+          <h3 style="font-family:'Syne',sans-serif;font-weight:800;font-size:1.1rem;color:var(--ink);margin-bottom:0.5rem;">GESLP Programme Team</h3>
+          <p style="font-family:'Space Mono',monospace;font-size:0.72rem;line-height:1.85;color:var(--ink-mid);">The GESLP team designs, deploys, and monitors the Green Eco Schools Leadership Program across Nigeria and expanding West Africa markets. In Year One the team delivered workshops across 7 states with 700+ students trained, all at zero cost to participating schools.</p>
+          <div style="margin-top:1rem;display:flex;flex-direction:column;gap:0.3rem;">
+            <span style="font-family:'Space Mono',monospace;font-size:0.6rem;color:var(--ink-light);letter-spacing:0.08em;text-transform:uppercase;">Focus: Curriculum · Deployment · Outcomes</span>
+          </div>
+        </div>
+
+      </div>
+
+      <p style="font-family:'Space Mono',monospace;font-size:0.7rem;color:var(--ink-light);line-height:1.8;margin-top:2rem;max-width:600px;">
+        For detailed team credentials, methodology frameworks, or capability documentation relevant to your due diligence process, contact <a href="mailto:hello@myecoafrica.org" style="color:var(--green);">hello@myecoafrica.org</a>.
+      </p>
+    </div>
+  </section>
+
   <!-- ── CTA ── -->
   <section class="cta-band">
     <div class="container">
@@ -160,7 +213,7 @@
       <div>
         <h4>Connect</h4>
         <div class="social-icons">
-          <a href="mailto:partnerwithmyecoafrica@gmail.com" class="social-icon" aria-label="Email" title="partnerwithmyecoafrica@gmail.com"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg></a>
+          <a href="mailto:hello@myecoafrica.org" class="social-icon" aria-label="Email" title="hello@myecoafrica.org"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg></a>
           <a href="tel:+2349077251354" class="social-icon" aria-label="Phone" title="+234 907 725 1354"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12 19.79 19.79 0 0 1 1.62 3.38 2 2 0 0 1 3.6 1.27h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.91 9a16 16 0 0 0 6 6l1.27-.95a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg></a>
           <a href="https://instagram.com/myecoafrica.co" class="social-icon" aria-label="Instagram" title="@myecoafrica.co" target="_blank" rel="noopener noreferrer"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg></a>
           <a href="https://linkedin.com/company/myecoafrica" class="social-icon" aria-label="LinkedIn" title="myecoafrica on LinkedIn" target="_blank" rel="noopener noreferrer"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg></a>
