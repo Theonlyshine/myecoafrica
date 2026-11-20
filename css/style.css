@@ -746,7 +746,11 @@ a:focus-visible, button:focus-visible, input:focus-visible, select:focus-visible
 @media (max-width: 640px) {
   /* Spacing */
   section { padding: 2.5rem 0; }
+  .hero { padding-top: 2.5rem; padding-bottom: 2.5rem; }
   .page-header { padding: 2.2rem 0 1.6rem; }
+
+  /* Announce bar: reduce letter-spacing so text fits one line */
+  .announce-bar { letter-spacing: 0.03em; padding: 0.5rem 0.75rem; }
 
   /* Typography */
   h1.display { font-size: clamp(1.3rem, 5.8vw, 2.2rem); overflow-wrap: break-word; }
