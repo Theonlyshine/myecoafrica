@@ -753,7 +753,8 @@ a:focus-visible, button:focus-visible, input:focus-visible, select:focus-visible
   h2.display { font-size: clamp(1.3rem, 6vw, 2rem); }
   h3.display { font-size: clamp(1rem, 4vw, 1.3rem); }
   p.lead { font-size: 0.95rem; }
-  blockquote.pull { font-size: 1.1rem; padding-left: 1rem; }
+  blockquote.pull { display: none; }
+  .arm-band-desc { display: none; }
 
   /* Grids */
   .grid-cols-2,
