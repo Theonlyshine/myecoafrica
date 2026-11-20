@@ -162,7 +162,7 @@
       if(!mdFiles.length){grid.innerHTML='<p style="grid-column:1/-1;padding:3rem 0;color:var(--ink-light);">No research posts yet.</p>';return;}
       var entries=await Promise.all(mdFiles.map(async function(f){var r=await fetch(f.download_url);var t=await r.text();var d=parseFrontmatter(t);d.slug=f.name.replace('.md','');return d;}));
       entries.sort(function(a,b){return new Date(b.date)-new Date(a.date);});
-      grid.innerHTML=entries.map(function(e){return'<div class="research-card"><span class="research-tag">'+(e.tag||'Research')+'</span><h3 class="display" style="font-size:clamp(1.2rem,2vw,1.6rem);margin-bottom:0.8rem;">'+(e.title||'Untitled')+'</h3>'+(e.summary?'<p>'+e.summary+'</p>':'')+'<a href="article.html?slug='+e.slug+'" class="btn btn-ghost" style="margin-top:1.4rem;display:inline-block;">Read Brief →</a></div>';}).join('');
+      grid.innerHTML=entries.map(function(e){return'<div class="research-card"><span class="research-tag">'+(e.tag||'Research')+'</span><h3 class="display" style="margin-bottom:0.8rem;">'+(e.title||'Untitled')+'</h3>'+(e.summary?'<p>'+e.summary+'</p>':'')+'<a href="article.html?slug='+e.slug+'" class="btn btn-ghost" style="margin-top:1.4rem;display:inline-block;">Read Brief →</a></div>';}).join('');
     }catch(err){grid.innerHTML='<p style="grid-column:1/-1;padding:3rem 0;color:var(--ink-light);">Research could not be loaded. Please try again shortly.</p>';}
   }
   loadResearch();
