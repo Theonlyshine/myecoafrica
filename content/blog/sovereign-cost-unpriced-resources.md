@@ -1,7 +1,7 @@
 ---
 title: "The Sovereign Cost of Unpriced Raw Material Values in Sub-Saharan Energy Markets"
 tag: "Macro Analysis"
-date: "2026-03-05T00:00:00.000Z"
+date: "2026-03-20T00:00:00.000Z"
 summary: "Sub-Saharan Africa sits on a disproportionate share of the minerals critical to the global energy transition — yet extracts a fraction of the value those minerals will generate. This analysis maps the structural mechanisms behind that gap and what changes if sovereign pricing power is exercised."
 ---
 

@@ -1,7 +1,7 @@
 ---
 title: "Twenty Years of Promises: Why Africa's Power Crisis Is Not a Technical Problem"
 tag: "Policy Brief"
-date: "2026-02-10T00:00:00.000Z"
+date: "2026-03-05T00:00:00.000Z"
 summary: "Between 2000 and 2024, Nigeria spent an estimated $20 billion on electricity infrastructure. The average Nigerian still experiences 10 to 20 hours of outage per day. The money went somewhere. This brief tracks where — and identifies the leadership and governance pattern that explains why the same crisis keeps reproducing across five African countries."
 ---
 

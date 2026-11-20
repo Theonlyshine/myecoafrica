@@ -1,7 +1,7 @@
 ---
 title: "Africa Is Not a Problem to Be Solved"
 tag: "Media & Intelligence"
-date: "2026-02-10T00:00:00.000Z"
+date: "2026-07-08T00:00:00.000Z"
 summary: "Search 'Africa sustainability' and notice the imagery. Drought. Poverty. The outstretched hand. Now search 'Germany sustainability.' You get wind turbines and innovation labs. The continent with the world's fastest-growing mobile money infrastructure looks like a crisis. The continent that invented grid dependence looks like the solution. That is not an accident. And it has consequences."
 ---
 

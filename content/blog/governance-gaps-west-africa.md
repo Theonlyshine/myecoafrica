@@ -1,7 +1,7 @@
 ---
 title: "The System Was Never Broken. It Was Built This Way."
 tag: "Policy Brief"
-date: "2026-01-20T00:00:00.000Z"
+date: "2026-01-15T00:00:00.000Z"
 summary: "Across Africa's three most critical sectors — energy, health, and education — the same failure keeps showing up. Not a lack of funding. Not a lack of ambition. A gap between what institutions promise and what people actually receive."
 ---
 

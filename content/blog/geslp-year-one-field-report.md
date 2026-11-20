@@ -1,8 +1,8 @@
 ---
 title: "GESLP Year One: Field Report on Deployment, Student Outcomes, and Institutional Adoption"
 tag: "Program Report"
-date: "2026-04-01T00:00:00.000Z"
-summary: "The Global Energy and Sustainability Leadership Program launched its first full cohort year in May 2026. This report documents what we learned — from schools, from students, from administrative staff, and from data collected on learning outcomes and sustainability literacy across the cohort."
+date: "2026-11-01T00:00:00.000Z"
+summary: "The Global Energy and Sustainability Leadership Program launched its first full cohort year in May 2026. This report documents what we learned — from schools, from students, from administrative staff, and from data collected on learning outcomes and sustainability literacy across the cohort. Coming soon."
 ---
 
 The Global Energy and Sustainability Leadership Program launched its first full cohort year in May 2026. This report documents what we learned — from schools, from students, from the administrative staff who had to supervise a new curriculum, and from the data we collected on learning outcomes and sustainability literacy across the cohort.
