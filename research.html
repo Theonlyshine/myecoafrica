@@ -55,7 +55,10 @@
   <!-- ── POSTS ── -->
   <section>
     <div class="container">
-      <div id="researchFilters" style="display:none;margin-bottom:2rem;display:flex;flex-wrap:wrap;gap:0.5rem;"></div>
+      <!-- Index list: quick overview of all available research -->
+      <div id="researchIndex" style="display:none;margin-bottom:3rem;border-top:1px solid var(--rule);"></div>
+      <!-- Filter + sort bar -->
+      <div id="researchFilters" style="display:none;margin-bottom:2rem;flex-wrap:wrap;gap:0.5rem;align-items:center;"></div>
       <div class="research-grid" id="researchGrid">
         <div style="grid-column:1/-1;padding:4rem 0;text-align:center;font-family:'Space Mono',monospace;font-size:0.65rem;letter-spacing:0.12em;text-transform:uppercase;color:var(--ink-light);">Loading research...</div>
       </div>
@@ -153,28 +156,78 @@
     var m=text.match(/^---\n([\s\S]*?)\n---/);if(!m)return{};
     var r={};m[1].split('\n').forEach(function(l){var i=l.indexOf(':');if(i===-1)return;r[l.slice(0,i).trim()]=l.slice(i+1).trim().replace(/^['"]|['"]$/g,'');});return r;
   }
-  var allEntries=[];
-  function renderGrid(filter){
+  var allEntries=[], activeTag=null, sortAsc=false;
+
+  function fmtDate(str){
+    if(!str)return'';
+    var d=new Date(str);
+    return d.toLocaleDateString('en-GB',{month:'short',year:'numeric'});
+  }
+
+  function sorted(arr){
+    return arr.slice().sort(function(a,b){
+      var da=new Date(a.date), db=new Date(b.date);
+      return sortAsc ? da-db : db-da;
+    });
+  }
+
+  function renderIndex(){
+    var idx=document.getElementById('researchIndex');
+    var shown=activeTag?allEntries.filter(function(e){return(e.tag||'Research')===activeTag;}):allEntries;
+    shown=sorted(shown);
+    idx.innerHTML=shown.map(function(e){
+      return'<div class="ri-row"><span class="ri-tag">'+(e.tag||'Research')+'</span>'
+        +'<a href="article.html?slug='+e.slug+'" class="ri-title">'+(e.title||'Untitled')+'</a>'
+        +'<span class="ri-date">'+fmtDate(e.date)+'</span>'
+        +'<a href="article.html?slug='+e.slug+'" class="ri-read">Read →</a>'
+        +'</div>';
+    }).join('');
+    idx.style.display='block';
+  }
+
+  function renderGrid(){
     var grid=document.getElementById('researchGrid');
-    var shown=filter?allEntries.filter(function(e){return(e.tag||'Research')===filter;}):allEntries;
+    var shown=activeTag?allEntries.filter(function(e){return(e.tag||'Research')===activeTag;}):allEntries;
+    shown=sorted(shown);
     if(!shown.length){grid.innerHTML='<p style="grid-column:1/-1;padding:3rem 0;color:var(--ink-light);">No articles in this category yet.</p>';return;}
     grid.innerHTML=shown.map(function(e){return'<div class="research-card"><span class="research-tag">'+(e.tag||'Research')+'</span><h3 class="display" style="margin-bottom:0.8rem;">'+(e.title||'Untitled')+'</h3>'+(e.summary?'<p>'+e.summary+'</p>':'')+'<a href="article.html?slug='+e.slug+'" class="btn btn-ghost" style="margin-top:1.4rem;display:inline-block;">Read Brief →</a></div>';}).join('');
   }
+
+  function render(){renderIndex();renderGrid();}
+
   function buildFilters(tags){
     var bar=document.getElementById('researchFilters');
     bar.style.display='flex';
-    var active=null;
+
+    /* category buttons */
     var allBtn=document.createElement('button');
-    allBtn.textContent='All';allBtn.className='research-filter-btn active';
-    allBtn.addEventListener('click',function(){active=null;renderGrid(null);bar.querySelectorAll('.research-filter-btn').forEach(function(b){b.classList.remove('active');});allBtn.classList.add('active');});
+    allBtn.textContent='All';allBtn.className='research-filter-btn active';allBtn.dataset.type='cat';
+    allBtn.addEventListener('click',function(){activeTag=null;render();bar.querySelectorAll('.research-filter-btn[data-type=cat]').forEach(function(b){b.classList.remove('active');});allBtn.classList.add('active');});
     bar.appendChild(allBtn);
     tags.forEach(function(tag){
       var btn=document.createElement('button');
-      btn.textContent=tag;btn.className='research-filter-btn';
-      btn.addEventListener('click',function(){active=tag;renderGrid(tag);bar.querySelectorAll('.research-filter-btn').forEach(function(b){b.classList.remove('active');});btn.classList.add('active');});
+      btn.textContent=tag;btn.className='research-filter-btn';btn.dataset.type='cat';
+      btn.addEventListener('click',function(){activeTag=tag;render();bar.querySelectorAll('.research-filter-btn[data-type=cat]').forEach(function(b){b.classList.remove('active');});btn.classList.add('active');});
       bar.appendChild(btn);
     });
+
+    /* divider */
+    var sep=document.createElement('span');
+    sep.style.cssText='width:1px;height:20px;background:var(--rule);display:inline-block;margin:0 0.3rem;';
+    bar.appendChild(sep);
+
+    /* date sort buttons */
+    var latestBtn=document.createElement('button');
+    latestBtn.textContent='Latest first';latestBtn.className='research-filter-btn active';latestBtn.dataset.type='sort';
+    latestBtn.addEventListener('click',function(){sortAsc=false;render();bar.querySelectorAll('.research-filter-btn[data-type=sort]').forEach(function(b){b.classList.remove('active');});latestBtn.classList.add('active');});
+    bar.appendChild(latestBtn);
+
+    var oldestBtn=document.createElement('button');
+    oldestBtn.textContent='Oldest first';oldestBtn.className='research-filter-btn';oldestBtn.dataset.type='sort';
+    oldestBtn.addEventListener('click',function(){sortAsc=true;render();bar.querySelectorAll('.research-filter-btn[data-type=sort]').forEach(function(b){b.classList.remove('active');});oldestBtn.classList.add('active');});
+    bar.appendChild(oldestBtn);
   }
+
   async function loadResearch(){
     var grid=document.getElementById('researchGrid');
     try{
@@ -184,11 +237,10 @@
       var mdFiles=files.filter(function(f){return f.name.endsWith('.md')&&f.name!=='sample-entry.md';});
       if(!mdFiles.length){grid.innerHTML='<p style="grid-column:1/-1;padding:3rem 0;color:var(--ink-light);">No research posts yet.</p>';return;}
       var entries=await Promise.all(mdFiles.map(async function(f){var r=await fetch(f.download_url);var t=await r.text();var d=parseFrontmatter(t);d.slug=f.name.replace('.md','');return d;}));
-      entries.sort(function(a,b){return new Date(b.date)-new Date(a.date);});
       allEntries=entries;
       var tags=[];entries.forEach(function(e){var t=e.tag||'Research';if(tags.indexOf(t)===-1)tags.push(t);});
-      if(tags.length>1)buildFilters(tags);
-      renderGrid(null);
+      buildFilters(tags);
+      render();
     }catch(err){grid.innerHTML='<p style="grid-column:1/-1;padding:3rem 0;color:var(--ink-light);">Research could not be loaded. Please try again shortly.</p>';}
   }
   loadResearch();

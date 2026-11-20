@@ -939,6 +939,57 @@ nav.main-nav { gap: 1.8rem; }
 }
 @media (max-width: 640px) { .research-grid { grid-template-columns: 1fr; } }
 
+/* ── RESEARCH INDEX (top list) ── */
+.ri-row {
+  display: grid;
+  grid-template-columns: 130px 1fr auto auto;
+  gap: 1rem;
+  align-items: center;
+  padding: 0.85rem 0;
+  border-bottom: 1px solid var(--rule);
+}
+.ri-tag {
+  font-family: 'Space Mono', monospace;
+  font-size: 0.58rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--green);
+  white-space: nowrap;
+}
+.ri-title {
+  font-family: 'Space Mono', monospace;
+  font-size: 0.78rem;
+  color: var(--ink);
+  line-height: 1.4;
+  text-decoration: none;
+}
+.ri-title:hover { color: var(--green); }
+.ri-date {
+  font-family: 'Space Mono', monospace;
+  font-size: 0.62rem;
+  letter-spacing: 0.08em;
+  color: var(--ink-light);
+  white-space: nowrap;
+}
+.ri-read {
+  font-family: 'Space Mono', monospace;
+  font-size: 0.62rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--green);
+  white-space: nowrap;
+  text-decoration: none;
+}
+.ri-read:hover { text-decoration: underline; }
+@media (max-width: 640px) {
+  .ri-row { grid-template-columns: 1fr auto; row-gap: 0.2rem; }
+  .ri-tag { grid-column: 1; }
+  .ri-date { grid-column: 2; grid-row: 1; }
+  .ri-title { grid-column: 1 / -1; grid-row: 2; }
+  .ri-read { display: none; }
+}
+
+/* ── RESEARCH FILTER BUTTONS ── */
 .research-filter-btn {
   font-family: 'Space Mono', monospace;
   font-size: 0.6rem;
