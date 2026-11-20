@@ -153,7 +153,7 @@ nav.main-nav .nav-cta-mobile { display: none; }
   position: relative;
   z-index: 51;
 }
-.announce-bar a { color: var(--green); text-decoration: none; }
+.announce-bar a { color: var(--green); text-decoration: none; white-space: nowrap; }
 .announce-bar a:hover { text-decoration: underline; }
 
 @media (max-width: 860px) {
@@ -749,8 +749,8 @@ a:focus-visible, button:focus-visible, input:focus-visible, select:focus-visible
   .hero { padding-top: 2.5rem; padding-bottom: 2.5rem; }
   .page-header { padding: 2.2rem 0 1.6rem; }
 
-  /* Announce bar: reduce letter-spacing so text fits one line */
-  .announce-bar { letter-spacing: 0.03em; padding: 0.5rem 0.75rem; }
+  /* Announce bar: tighten spacing so text wraps cleanly at the link */
+  .announce-bar { letter-spacing: 0.03em; padding: 0.45rem 0.75rem; line-height: 1.6; }
 
   /* Typography */
   h1.display { font-size: clamp(1.3rem, 5.8vw, 2.2rem); overflow-wrap: break-word; }
