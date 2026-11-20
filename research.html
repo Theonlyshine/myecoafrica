@@ -55,6 +55,7 @@
   <!-- ── POSTS ── -->
   <section>
     <div class="container">
+      <div id="researchFilters" style="display:none;margin-bottom:2rem;display:flex;flex-wrap:wrap;gap:0.5rem;"></div>
       <div class="research-grid" id="researchGrid">
         <div style="grid-column:1/-1;padding:4rem 0;text-align:center;font-family:'Space Mono',monospace;font-size:0.65rem;letter-spacing:0.12em;text-transform:uppercase;color:var(--ink-light);">Loading research...</div>
       </div>
@@ -152,6 +153,28 @@
     var m=text.match(/^---\n([\s\S]*?)\n---/);if(!m)return{};
     var r={};m[1].split('\n').forEach(function(l){var i=l.indexOf(':');if(i===-1)return;r[l.slice(0,i).trim()]=l.slice(i+1).trim().replace(/^['"]|['"]$/g,'');});return r;
   }
+  var allEntries=[];
+  function renderGrid(filter){
+    var grid=document.getElementById('researchGrid');
+    var shown=filter?allEntries.filter(function(e){return(e.tag||'Research')===filter;}):allEntries;
+    if(!shown.length){grid.innerHTML='<p style="grid-column:1/-1;padding:3rem 0;color:var(--ink-light);">No articles in this category yet.</p>';return;}
+    grid.innerHTML=shown.map(function(e){return'<div class="research-card"><span class="research-tag">'+(e.tag||'Research')+'</span><h3 class="display" style="margin-bottom:0.8rem;">'+(e.title||'Untitled')+'</h3>'+(e.summary?'<p>'+e.summary+'</p>':'')+'<a href="article.html?slug='+e.slug+'" class="btn btn-ghost" style="margin-top:1.4rem;display:inline-block;">Read Brief →</a></div>';}).join('');
+  }
+  function buildFilters(tags){
+    var bar=document.getElementById('researchFilters');
+    bar.style.display='flex';
+    var active=null;
+    var allBtn=document.createElement('button');
+    allBtn.textContent='All';allBtn.className='research-filter-btn active';
+    allBtn.addEventListener('click',function(){active=null;renderGrid(null);bar.querySelectorAll('.research-filter-btn').forEach(function(b){b.classList.remove('active');});allBtn.classList.add('active');});
+    bar.appendChild(allBtn);
+    tags.forEach(function(tag){
+      var btn=document.createElement('button');
+      btn.textContent=tag;btn.className='research-filter-btn';
+      btn.addEventListener('click',function(){active=tag;renderGrid(tag);bar.querySelectorAll('.research-filter-btn').forEach(function(b){b.classList.remove('active');});btn.classList.add('active');});
+      bar.appendChild(btn);
+    });
+  }
   async function loadResearch(){
     var grid=document.getElementById('researchGrid');
     try{
@@ -162,7 +185,10 @@
       if(!mdFiles.length){grid.innerHTML='<p style="grid-column:1/-1;padding:3rem 0;color:var(--ink-light);">No research posts yet.</p>';return;}
       var entries=await Promise.all(mdFiles.map(async function(f){var r=await fetch(f.download_url);var t=await r.text();var d=parseFrontmatter(t);d.slug=f.name.replace('.md','');return d;}));
       entries.sort(function(a,b){return new Date(b.date)-new Date(a.date);});
-      grid.innerHTML=entries.map(function(e){return'<div class="research-card"><span class="research-tag">'+(e.tag||'Research')+'</span><h3 class="display" style="margin-bottom:0.8rem;">'+(e.title||'Untitled')+'</h3>'+(e.summary?'<p>'+e.summary+'</p>':'')+'<a href="article.html?slug='+e.slug+'" class="btn btn-ghost" style="margin-top:1.4rem;display:inline-block;">Read Brief →</a></div>';}).join('');
+      allEntries=entries;
+      var tags=[];entries.forEach(function(e){var t=e.tag||'Research';if(tags.indexOf(t)===-1)tags.push(t);});
+      if(tags.length>1)buildFilters(tags);
+      renderGrid(null);
     }catch(err){grid.innerHTML='<p style="grid-column:1/-1;padding:3rem 0;color:var(--ink-light);">Research could not be loaded. Please try again shortly.</p>';}
   }
   loadResearch();

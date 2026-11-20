@@ -939,6 +939,25 @@ nav.main-nav { gap: 1.8rem; }
 }
 @media (max-width: 640px) { .research-grid { grid-template-columns: 1fr; } }
 
+.research-filter-btn {
+  font-family: 'Space Mono', monospace;
+  font-size: 0.6rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  padding: 0.4rem 0.9rem;
+  background: transparent;
+  border: 1px solid var(--rule);
+  color: var(--ink-light);
+  cursor: pointer;
+  transition: all 0.2s;
+}
+.research-filter-btn:hover,
+.research-filter-btn.active {
+  background: var(--ink);
+  border-color: var(--ink);
+  color: var(--white);
+}
+
 /* ── GESLP STRIP (homepage) ── */
 .geslp-strip {
   display: grid;

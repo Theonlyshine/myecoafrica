@@ -86,12 +86,14 @@
       <form name="newsletter" method="POST" data-netlify="true" netlify-honeypot="bot-field" class="reveal" id="nlForm">
         <input type="hidden" name="form-name" value="newsletter" />
         <p hidden><label>Don't fill this in if you're human: <input name="bot-field" /></label></p>
-        <div class="nl-inline">
-          <input type="email" name="email" placeholder="your@email.com" required style="flex:1;padding:0.9rem 1rem;background:transparent;border:none;outline:none;font-size:0.95rem;color:var(--white);min-width:0;" />
+        <div class="nl-inline" style="border:1.5px solid rgba(255,255,255,0.45);">
+          <input type="email" name="email" placeholder="your@email.com" required style="flex:1;padding:0.9rem 1rem;background:rgba(255,255,255,0.07);border:none;outline:none;font-size:0.95rem;color:var(--white);min-width:0;" />
           <button type="submit" class="btn btn-primary" style="border-radius:0;border:none;padding:0.9rem 1.6rem;white-space:nowrap;">Subscribe →</button>
         </div>
         <p id="nlSuccess" hidden style="margin-top:1rem;font-family:'Space Mono',monospace;font-size:0.72rem;letter-spacing:0.08em;color:var(--green);">You're in. We'll be in touch.</p>
       </form>
+      <p class="reveal" style="margin-top:2rem;font-family:'Space Mono',monospace;font-size:0.68rem;letter-spacing:0.08em;text-transform:uppercase;color:rgba(255,255,255,0.45);">Also on Substack</p>
+      <a href="https://myecoafrica.substack.com" target="_blank" rel="noopener noreferrer" class="btn btn-ghost reveal" style="margin-top:0.75rem;display:inline-block;border-color:rgba(255,255,255,0.3);color:rgba(255,255,255,0.8);">Subscribe on Substack →</a>
     </div>
   </section>
 
